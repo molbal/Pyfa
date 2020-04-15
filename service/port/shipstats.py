@@ -190,6 +190,23 @@ def miscSection(fit):
 
     return text
 
+def exportAsJson(fit, callback):
+    data = {
+        "offense": {
+            "totalDps": fit.getTotalDps().total,
+            "weaponDps": fit.getWeaponDps().total,
+            "droneDps": fit.getDroneDps().total,
+            "totalVolley": fit.getTotalVolley().total
+        },
+        "defense": {
+
+        }
+    }
+    import json
+    return json.dumps(data)
+
+
+
 
 def exportFitStats(fit, callback):
     """

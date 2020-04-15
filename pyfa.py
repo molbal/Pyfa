@@ -25,7 +25,8 @@ import sys
 from optparse import AmbiguousOptionError, BadOptionError, OptionParser
 
 import config
-from eos.db import getFit
+# from eos.db import getFit
+# from service.port.shipstats import exportFitStats
 from service.prereqsCheck import PreCheckException, PreCheckMessage, version_block, version_precheck
 from db_update import db_needs_update, update_db
 
@@ -142,27 +143,19 @@ if __name__ == "__main__":
             options.title = "pyfa %s - Python Fitting Assistant" % (config.getVersion())
 
         pyfa = wx.App(False)
-        mf = MainFrame(options.title)
+        mf = MainFrame(options.title, options)
 
         if options.fit is not None:
             try:
                 import base64
                 fit_bytes = base64.b64decode(options.fit)
                 fit_string = fit_bytes.decode('UTF-8')
-                print("k1")
                 mf.doImport(fit_string)
-                print("k2")
-                fit_parsed = mf.getActiveFit()
-                print("k3")
-                import time
-                time.sleep(1)
-                # exp = EfsPort.exportEfs(fit_parsed, 0, None)
-                # mf.exportToClipboard(None)
-                # import Port
-                # Shio
-                # exported = 'exportFitStats'(fit_parsed, None)
-                # print("Exported: " + exported)
-                sys.exit(0)
+                # fit_parsed = mf.getActiveFit()
+                # from eos.db import getFit
+                # fit_db = getFit(fit_parsed)
+                # from service.port import Port
+                # exp = Port().exportFitStats(fit_db)
             except TypeError as cee:
                 print("Fit Base64 is broken: " + cee)
 
@@ -174,7 +167,6 @@ if __name__ == "__main__":
             import cProfile
             cProfile.run('pyfa.MainLoop()', profile_path)
         else:
-
             pyfa.MainLoop()
 
         # When main loop is over, threads have 5 seconds to comply...

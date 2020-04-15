@@ -39,7 +39,7 @@ from service.port.eft import (
 from service.port.esi import exportESI, importESI
 from service.port.multibuy import exportMultiBuy
 from service.port.shared import IPortUser, UserCancelException, processing_notify
-from service.port.shipstats import exportFitStats
+from service.port.shipstats import exportFitStats, exportAsJson
 from service.port.xml import importXml, exportXml
 from service.port.muta import parseMutant
 
@@ -327,3 +327,7 @@ class Port:
     @staticmethod
     def exportFitStats(fit, callback=None):
         return exportFitStats(fit, callback=callback)
+
+    @staticmethod
+    def exportFitStatsJson(fit, callback=None):
+        return exportAsJson(fit, callback=callback)

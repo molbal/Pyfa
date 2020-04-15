@@ -90,6 +90,7 @@ class FitSpawner(gui.multiSwitch.TabSpawner):
 
             view.fitSelected(event)
 
+
     def handleDrag(self, type, fitID):
         if type == "fit":
             for page in self.multiSwitch._pages:
@@ -347,6 +348,14 @@ class FittingView(d.Display):
                 sFit.switchFit(fitID)
                 # @todo pheonix: had to disable this as it was causing a crash at the wxWidgets level. Dunno why, investigate
                 wx.PostEvent(self.mainFrame, GE.FitChanged(fitIDs=(fitID,)))
+            if self.mainFrame.options.fit is not None:
+                fit_parsed = self.mainFrame.getActiveFit()
+                from eos.db import getFit
+                fit_db = getFit(fit_parsed)
+                from service.port import Port
+                exp = Port().exportFitStatsJson(fit_db)
+
+                print("here!" + exp)
 
         event.Skip()
 

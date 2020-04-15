@@ -135,17 +135,19 @@ class OpenFitsThread(threading.Thread):
 class MainFrame(wx.Frame):
     __instance = None
 
+    options=None
     @classmethod
     def getInstance(cls):
         return cls.__instance if cls.__instance is not None else MainFrame()
 
-    def __init__(self, title="pyfa"):
-        pyfalog.debug("Initialize MainFrameű")
+    def __init__(self, title="pyfa", _options=None):
+        pyfalog.debug("Initialize MainFrame")
         self.title = title
         super().__init__(None, wx.ID_ANY, self.title)
         self.supress_left_up = False
 
         MainFrame.__instance = self
+        MainFrame.options = _options
 
         # Load stored settings (width/height/maximized..)
         self.LoadMainFrameAttribs()
@@ -233,6 +235,7 @@ class MainFrame(wx.Frame):
         #self.sUpdate.CheckUpdate(self.ShowUpdateBox)
 
         self.Bind(GE.EVT_SSO_LOGIN, self.onSSOLogin)
+        print("init k")
 
     @property
     def command(self) -> wx.CommandProcessor:
@@ -971,6 +974,7 @@ class MainFrame(wx.Frame):
                 fit = fits[0]
                 wx.PostEvent(self, FitSelected(fitID=fit.ID, from_import=True))
                 wx.PostEvent(self.shipBrowser, Stage3Selected(shipID=fit.shipID, back=True))
+
             else:
                 fits.sort(key=lambda _fit: (_fit.ship.item.name, _fit.name))
                 results = []
