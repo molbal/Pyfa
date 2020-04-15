@@ -4,6 +4,9 @@
 
 ![pyfa](https://user-images.githubusercontent.com/275209/66119992-864be080-e5e2-11e9-994a-3a4368c9fad7.png)
 
+## What the fork
+This motherforking shirtballs is a **badly** built version of the regular pyfa that gets a fit as base64 in the command line, prints its statistics in json and then quits. Its quality is horribly low, mainly due to my thousands of seconds of experience with python.
+
 ## What is it?
 
 Pyfa, short for **py**thon **f**itting **a**ssistant, allows you to create, experiment with, and save ship fittings without being in game. Open source and written in Python, it is available on any platform where Python 3 and wxWidgets are available, including Windows, Mac OS X, and Linux.
