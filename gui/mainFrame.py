@@ -140,7 +140,7 @@ class MainFrame(wx.Frame):
         return cls.__instance if cls.__instance is not None else MainFrame()
 
     def __init__(self, title="pyfa"):
-        pyfalog.debug("Initialize MainFrame")
+        pyfalog.debug("Initialize MainFrameű")
         self.title = title
         super().__init__(None, wx.ID_ANY, self.title)
         self.supress_left_up = False
@@ -230,7 +230,7 @@ class MainFrame(wx.Frame):
 
         # Check for updates
         self.sUpdate = Update.getInstance()
-        self.sUpdate.CheckUpdate(self.ShowUpdateBox)
+        #self.sUpdate.CheckUpdate(self.ShowUpdateBox)
 
         self.Bind(GE.EVT_SSO_LOGIN, self.onSSOLogin)
 
@@ -255,9 +255,9 @@ class MainFrame(wx.Frame):
         # Remove any fits that cause exception when fetching (non-existent fits)
         for id in fits[:]:
             try:
-                fit = sFit.getFit(id, basic=True)
-                if fit is None:
-                    fits.remove(id)
+                #fit = sFit.getFit(id, basic=True)
+                #if fit is None:
+                fits.remove(id)
             except (KeyboardInterrupt, SystemExit):
                 raise
             except:
@@ -751,8 +751,7 @@ class MainFrame(wx.Frame):
         else:
             self.marketBrowser.search.Focus()
 
-    def importFromClipboard(self, event):
-        clipboard = fromClipboard()
+    def doImport(self, clipboard):
         activeFit = self.getActiveFit()
         try:
             importType, importData = Port().importFitFromBuffer(clipboard, activeFit)
@@ -789,6 +788,9 @@ class MainFrame(wx.Frame):
             pyfalog.error("Attempt to import failed:\n{0}", clipboard)
         else:
             self._openAfterImport(importData)
+
+    def importFromClipboard(self, event):
+        self.doImport(fromClipboard())
 
     def exportToClipboard(self, event):
         with CopySelectDialog(self) as dlg:

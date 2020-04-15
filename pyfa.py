@@ -25,6 +25,7 @@ import sys
 from optparse import AmbiguousOptionError, BadOptionError, OptionParser
 
 import config
+from eos.db import getFit
 from service.prereqsCheck import PreCheckException, PreCheckMessage, version_block, version_precheck
 from db_update import db_needs_update, update_db
 
@@ -73,6 +74,7 @@ parser.add_option("-t", "--title", action="store", dest="title", help="Set Windo
 parser.add_option("-s", "--savepath", action="store", dest="savepath", help="Set the folder for savedata", default=None)
 parser.add_option("-l", "--logginglevel", action="store", dest="logginglevel", help="Set desired logging level [Critical|Error|Warning|Info|Debug]", default="Error")
 parser.add_option("-p", "--profile", action="store", dest="profile_path", help="Set location to save profileing.", default=None)
+parser.add_option("-f", "--fit", default=None)
 
 (options, args) = parser.parse_args()
 
@@ -141,6 +143,29 @@ if __name__ == "__main__":
 
         pyfa = wx.App(False)
         mf = MainFrame(options.title)
+
+        if options.fit is not None:
+            try:
+                import base64
+                fit_bytes = base64.b64decode(options.fit)
+                fit_string = fit_bytes.decode('UTF-8')
+                print("k1")
+                mf.doImport(fit_string)
+                print("k2")
+                fit_parsed = mf.getActiveFit()
+                print("k3")
+                import time
+                time.sleep(1)
+                # exp = EfsPort.exportEfs(fit_parsed, 0, None)
+                # mf.exportToClipboard(None)
+                # import Port
+                # Shio
+                # exported = 'exportFitStats'(fit_parsed, None)
+                # print("Exported: " + exported)
+                sys.exit(0)
+            except TypeError as cee:
+                print("Fit Base64 is broken: " + cee)
+
         ErrorHandler.SetParent(mf)
 
         if options.profile_path:
@@ -149,13 +174,14 @@ if __name__ == "__main__":
             import cProfile
             cProfile.run('pyfa.MainLoop()', profile_path)
         else:
+
             pyfa.MainLoop()
 
         # When main loop is over, threads have 5 seconds to comply...
         import threading
         from utils.timer import CountdownTimer
 
-        timer = CountdownTimer(5)
+        timer = CountdownTimer(1)
         stoppableThreads = []
         for t in threading.enumerate():
             if t is not threading.main_thread() and hasattr(t, 'stop'):
