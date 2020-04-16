@@ -354,8 +354,9 @@ class FittingView(d.Display):
                 fit_db = getFit(fit_parsed)
                 from service.port import Port
                 exp = Port().exportFitStatsJson(fit_db)
-
-                print("here!" + exp)
+                print(exp)
+                exp = Port().exportFitStats(fit_db)
+                print(exp)
 
         event.Skip()
 

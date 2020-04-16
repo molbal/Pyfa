@@ -191,18 +191,72 @@ def miscSection(fit):
     return text
 
 def exportAsJson(fit, callback):
+    import json
+    ehp = [fit.ehp[tank] for tank in tankTypes] if fit.ehp is not None else [0, 0, 0]
+    ehp.append(sum(ehp))
+    resists = {tankType: [1 - fit.ship.getModifiedItemAttr(s) for s in resonanceNames[tankType]] for tankType in tankTypes}
+
+    selfRep = [fit.effectiveTank[tankType + "Repair"] for tankType in tankTypes]
+    print("selfRep: " + json.dumps(selfRep))
+    sustainRep = [fit.effectiveSustainableTank[tankType + "Repair"] for tankType in tankTypes]
+    print("sustainRep: " + json.dumps(sustainRep))
+    remoteRepObj = fit.getRemoteReps()
+    # print("remoteRepObj: " + json.dumps(remoteRepObj))
+    remoteRep = [remoteRepObj.shield, remoteRepObj.armor, remoteRepObj.hull]
+    print("remoteRep: " + json.dumps(remoteRep))
+    shieldRegen = [fit.effectiveSustainableTank["passiveShield"], 0, 0]
+    print("shieldRegen: " + json.dumps(shieldRegen))
+    shieldRechargeModuleMultipliers = [module.item.attributes["shieldRechargeRateMultiplier"].value for module in
+                                       fit.modules if
+                                       module.item and "shieldRechargeRateMultiplier" in module.item.attributes]
+    shieldRechargeMultiplierByModules = reduce(lambda x, y: x * y, shieldRechargeModuleMultipliers, 1)
+    if shieldRechargeMultiplierByModules >= 0.9:  # If the total affect of modules on the shield recharge is negative or insignificant, we don't care about it
+        shieldRegen[0] = 0
+    totalRep = list(zip(selfRep, remoteRep, shieldRegen))
+    totalRep = list(map(sum, totalRep))
+    print("shieldRechargeModuleMultipliers: " + json.dumps(shieldRechargeModuleMultipliers))
+    print("shieldRechargeMultiplierByModules: " + json.dumps(shieldRechargeMultiplierByModules))
+    print("totalRep: " + json.dumps(totalRep))
+
     data = {
         "offense": {
-            "totalDps": fit.getTotalDps().total,
-            "weaponDps": fit.getWeaponDps().total,
-            "droneDps": fit.getDroneDps().total,
-            "totalVolley": fit.getTotalVolley().total
+            "totalDps": round(fit.getTotalDps().total, 2),
+            "weaponDps": round(fit.getWeaponDps().total, 2),
+            "droneDps": round(fit.getDroneDps().total, 2),
+            "totalVolley": round(fit.getTotalVolley().total, 2)
         },
         "defense": {
+            "ehp": {
+                "total": ehp[3],
+                "shield": ehp[0],
+                "armor": ehp[1],
+                "hull": ehp[2]
+            },
+            "resists": {
+                "shield": {
+                    "em": round(resists["shield"][0], 4),
+                    "therm": round(resists["shield"][1], 4),
+                    "kin": round(resists["shield"][2], 4),
+                    "exp": round(resists["shield"][3], 4)
+                },
+                "armor": {
+                    "em": round(resists["armor"][0], 4),
+                    "therm": round(resists["armor"][1], 4),
+                    "kin": round(resists["armor"][2], 4),
+                    "exp": round(resists["armor"][3], 4)
+                },
+                "hull": {
+                    "em": round(resists["hull"][0], 4),
+                    "therm": round(resists["hull"][1], 4),
+                    "kin": round(resists["hull"][2], 4),
+                    "exp": round(resists["hull"][3], 4)
+                }
+            },
+            "reps": {
 
+            }
         }
     }
-    import json
     return json.dumps(data)
 
 
