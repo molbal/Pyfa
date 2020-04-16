@@ -235,7 +235,6 @@ class MainFrame(wx.Frame):
         #self.sUpdate.CheckUpdate(self.ShowUpdateBox)
 
         self.Bind(GE.EVT_SSO_LOGIN, self.onSSOLogin)
-        print("init k")
 
     @property
     def command(self) -> wx.CommandProcessor:

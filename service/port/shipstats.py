@@ -197,33 +197,16 @@ def exportAsJson(fit, callback):
     resists = {tankType: [1 - fit.ship.getModifiedItemAttr(s) for s in resonanceNames[tankType]] for tankType in tankTypes}
 
     selfRep = [fit.effectiveTank[tankType + "Repair"] for tankType in tankTypes]
-    print("selfRep: " + json.dumps(selfRep))
     sustainRep = [fit.effectiveSustainableTank[tankType + "Repair"] for tankType in tankTypes]
-    print("sustainRep: " + json.dumps(sustainRep))
     remoteRepObj = fit.getRemoteReps()
-    # print("remoteRepObj: " + json.dumps(remoteRepObj))
     remoteRep = [remoteRepObj.shield, remoteRepObj.armor, remoteRepObj.hull]
-    print("remoteRep: " + json.dumps(remoteRep))
     shieldRegen = [fit.effectiveSustainableTank["passiveShield"], 0, 0]
-    print("shieldRegen: " + json.dumps(shieldRegen))
-    shieldRechargeModuleMultipliers = [module.item.attributes["shieldRechargeRateMultiplier"].value for module in
-                                       fit.modules if
-                                       module.item and "shieldRechargeRateMultiplier" in module.item.attributes]
-    shieldRechargeMultiplierByModules = reduce(lambda x, y: x * y, shieldRechargeModuleMultipliers, 1)
-    if shieldRechargeMultiplierByModules >= 0.9:  # If the total affect of modules on the shield recharge is negative or insignificant, we don't care about it
-        shieldRegen[0] = 0
-    totalRep = list(zip(selfRep, remoteRep, shieldRegen))
-    totalRep = list(map(sum, totalRep))
-    print("shieldRechargeModuleMultipliers: " + json.dumps(shieldRechargeModuleMultipliers))
-    print("shieldRechargeMultiplierByModules: " + json.dumps(shieldRechargeMultiplierByModules))
-    print("totalRep: " + json.dumps(totalRep))
 
     from eos.utils.spoolSupport import SpoolOptions
-    from eos.const import SpoolType
     data = {
         "offense": {
-            "totalDps": round(fit.getTotalDps(spoolOptions=SpoolOptions(SpoolType.SPOOL_SCALE, 1, True)).total, 2),
-            "weaponDps": round(fit.getWeaponDps(spoolOptions=SpoolOptions(SpoolType.SPOOL_SCALE, 1, True)).total, 2),
+            "totalDps": round(fit.getTotalDps(spoolOptions=SpoolOptions(0, 1, True)).total, 2),
+            "weaponDps": round(fit.getWeaponDps(spoolOptions=SpoolOptions(0, 1, True)).total, 2),
             "droneDps": round(fit.getDroneDps().total, 2),
             "totalVolley": round(fit.getTotalVolley().total, 2)
         },
@@ -255,10 +238,39 @@ def exportAsJson(fit, callback):
                 }
             },
             "reps": {
-
+                "burst": {
+                    "shieldRegen": round(shieldRegen[0], 2),
+                    "shieldBoost": round(selfRep[0], 2),
+                    "armor": round(selfRep[1], 2),
+                    "hull": round(selfRep[2], 2),
+                    "total": round(shieldRegen[0]+selfRep[0]+selfRep[1]+selfRep[2], 2)
+                },
+                "sustained": {
+                    "shieldRegen": round(shieldRegen[0], 2),
+                    "shieldBoost": round(sustainRep[0], 2),
+                    "armor": round(sustainRep[1], 2),
+                    "hull": round(sustainRep[2], 2),
+                    "total": round(shieldRegen[0]+sustainRep[0]+sustainRep[1]+sustainRep[2], 2)
+                }
+            },
+            "misc": {
+                "maxSpeed": round(fit.maxSpeed, 2),
+                "signature": round(fit.ship.getModifiedItemAttr("signatureRadius"), 2),
+                "capacitor": {
+                    "capacity": round(fit.ship.getModifiedItemAttr("capacitorCapacity"), 2),
+                    "stable": fit.capStable,
+                    "stableAt": round(fit.capState, 2) if  fit.capStable else None,
+                    "lastsSeconds": round(fit.capState, 2) if not fit.capStable else None
+                },
+                "targeting": {
+                    "range": fit.maxTargetRange,
+                    "resolution": fit.ship.getModifiedItemAttr("scanResolution"),
+                    "strength": fit.scanStrength
+                }
             }
         }
     }
+    from eos.const import SpoolType
     return json.dumps(data)
 
 
