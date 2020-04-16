@@ -218,10 +218,12 @@ def exportAsJson(fit, callback):
     print("shieldRechargeMultiplierByModules: " + json.dumps(shieldRechargeMultiplierByModules))
     print("totalRep: " + json.dumps(totalRep))
 
+    from eos.utils.spoolSupport import SpoolOptions
+    from eos.const import SpoolType
     data = {
         "offense": {
-            "totalDps": round(fit.getTotalDps().total, 2),
-            "weaponDps": round(fit.getWeaponDps().total, 2),
+            "totalDps": round(fit.getTotalDps(spoolOptions=SpoolOptions(SpoolType.SPOOL_SCALE, 1, True)).total, 2),
+            "weaponDps": round(fit.getWeaponDps(spoolOptions=SpoolOptions(SpoolType.SPOOL_SCALE, 1, True)).total, 2),
             "droneDps": round(fit.getDroneDps().total, 2),
             "totalVolley": round(fit.getTotalVolley().total, 2)
         },

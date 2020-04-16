@@ -341,6 +341,14 @@ class FittingView(d.Display):
             startup = getattr(event, "startup", False)
             self.activeFitID = fitID
             sFit = Fit.getInstance()
+
+            # VEETOR TINKERING START
+            self.mainFrame.command.Submit(cmd.GuiToggleLocalDroneStatesCommand(
+                fitID=fitID,
+                mainPosition=0,
+                positions=[0]))
+            # VEETOR TINKERING STOP
+
             self.updateTab()
             if not startup or startup == 2:  # see OpenFitsThread in gui.mainFrame
                 self.Show(fitID is not None)
