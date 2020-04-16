@@ -347,7 +347,7 @@ class FittingView(d.Display):
                 fitID=fitID,
                 mainPosition=0,
                 positions=[0]))
-            # VEETOR TINKERING STOP
+            # VEETOR TINKERING END
 
             self.updateTab()
             if not startup or startup == 2:  # see OpenFitsThread in gui.mainFrame
@@ -356,6 +356,8 @@ class FittingView(d.Display):
                 sFit.switchFit(fitID)
                 # @todo pheonix: had to disable this as it was causing a crash at the wxWidgets level. Dunno why, investigate
                 wx.PostEvent(self.mainFrame, GE.FitChanged(fitIDs=(fitID,)))
+
+            # VEETOR TINKERING START
             if self.mainFrame.options.fit is not None:
                 fit_parsed = self.mainFrame.getActiveFit()
                 from eos.db import getFit
@@ -365,6 +367,7 @@ class FittingView(d.Display):
                 print(exp)
                 exp = Port().exportFitStats(fit_db)
                 print(exp)
+            # VEETOR TINKERING END
 
         event.Skip()
 
