@@ -252,21 +252,23 @@ def exportAsJson(fit, callback):
                     "hull": round(sustainRep[2], 2),
                     "total": round(shieldRegen[0]+sustainRep[0]+sustainRep[1]+sustainRep[2], 2)
                 }
+            }
+        },
+        "misc": {
+            "shipName": fit.ship.item.name,
+            "shipItemId": fit.ship.item.ID,
+            "maxSpeed": round(fit.maxSpeed, 2),
+            "signature": round(fit.ship.getModifiedItemAttr("signatureRadius"), 2),
+            "capacitor": {
+                "capacity": round(fit.ship.getModifiedItemAttr("capacitorCapacity"), 2),
+                "stable": fit.capStable,
+                "stableAt": round(fit.capState, 2) if fit.capStable else None,
+                "lastsSeconds": round(fit.capState, 2) if not fit.capStable else None
             },
-            "misc": {
-                "maxSpeed": round(fit.maxSpeed, 2),
-                "signature": round(fit.ship.getModifiedItemAttr("signatureRadius"), 2),
-                "capacitor": {
-                    "capacity": round(fit.ship.getModifiedItemAttr("capacitorCapacity"), 2),
-                    "stable": fit.capStable,
-                    "stableAt": round(fit.capState, 2) if  fit.capStable else None,
-                    "lastsSeconds": round(fit.capState, 2) if not fit.capStable else None
-                },
-                "targeting": {
-                    "range": fit.maxTargetRange,
-                    "resolution": fit.ship.getModifiedItemAttr("scanResolution"),
-                    "strength": fit.scanStrength
-                }
+            "targeting": {
+                "range": fit.maxTargetRange,
+                "resolution": fit.ship.getModifiedItemAttr("scanResolution"),
+                "strength": fit.scanStrength
             }
         }
     }
