@@ -159,7 +159,7 @@ if __name__ == "__main__":
             except TypeError as cee:
                 print("Fit Base64 is broken: " + cee)
 
-        ErrorHandler.SetParent(mf)
+        # ErrorHandler.SetParent(mf)
 
         if options.profile_path:
             profile_path = os.path.join(options.profile_path, 'pyfa-{}.profile'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M%S')))
