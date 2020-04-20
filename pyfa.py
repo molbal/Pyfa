@@ -156,8 +156,12 @@ if __name__ == "__main__":
                 # fit_db = getFit(fit_parsed)
                 # from service.port import Port
                 # exp = Port().exportFitStats(fit_db)
-            except TypeError as cee:
-                print("Fit Base64 is broken: " + cee)
+            except:
+                import json
+                print(json.dumps({
+                    "error": "Could not import fit"
+                }))
+                sys.exit(1)
 
         # ErrorHandler.SetParent(mf)
 

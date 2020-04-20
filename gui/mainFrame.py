@@ -756,6 +756,7 @@ class MainFrame(wx.Frame):
     def doImport(self, clipboard):
         activeFit = self.getActiveFit()
         try:
+            k = 0
             importType, importData = Port().importFitFromBuffer(clipboard, activeFit)
             if importType == "FittingItem":
                 baseItem, mutaplasmidItem, mutations = importData[0]
@@ -788,6 +789,7 @@ class MainFrame(wx.Frame):
             raise
         except:
             pyfalog.error("Attempt to import failed:\n{0}", clipboard)
+            raise
         else:
             self._openAfterImport(importData)
 
