@@ -35,7 +35,8 @@ def tankSection(fit):
     ehp = [fit.ehp[tank] for tank in tankTypes] if fit.ehp is not None else [0, 0, 0]
     ehp.append(sum(ehp))
     ehpStr = [formatAmount(ehpVal, 3, 0, 9) for ehpVal in ehp]
-    resists = {tankType: [1 - fit.ship.getModifiedItemAttr(s) for s in resonanceNames[tankType]] for tankType in tankTypes}
+    resists = {tankType: [1 - fit.ship.getModifiedItemAttr(s) for s in resonanceNames[tankType]] for tankType in
+               tankTypes}
     ehpAgainstDamageType = [sum(pattern.calculateEhp(fit).values()) for pattern in damagePatterns]
     ehpAgainstDamageTypeStr = [formatAmount(ehpVal, 3, 0, 9) for ehpVal in ehpAgainstDamageType]
 
@@ -85,6 +86,7 @@ def _addFormattedColumn(value, name, header, linesList, repStr):
         linesList = [line + "{:>7} ".format(rep) for line, rep in zip(linesList, repStr)]
 
     return header, linesList
+
 
 def repsSection(fit):
     """ Returns the text of the repairs section"""
@@ -190,11 +192,13 @@ def miscSection(fit):
 
     return text
 
+
 def exportAsJson(fit, callback):
     import json
     ehp = [fit.ehp[tank] for tank in tankTypes] if fit.ehp is not None else [0, 0, 0]
     ehp.append(sum(ehp))
-    resists = {tankType: [1 - fit.ship.getModifiedItemAttr(s) for s in resonanceNames[tankType]] for tankType in tankTypes}
+    resists = {tankType: [1 - fit.ship.getModifiedItemAttr(s) for s in resonanceNames[tankType]] for tankType in
+               tankTypes}
 
     selfRep = [fit.effectiveTank[tankType + "Repair"] for tankType in tankTypes]
     sustainRep = [fit.effectiveSustainableTank[tankType + "Repair"] for tankType in tankTypes]
@@ -243,20 +247,24 @@ def exportAsJson(fit, callback):
                     "shieldBoost": round(selfRep[0], 2),
                     "armor": round(selfRep[1], 2),
                     "hull": round(selfRep[2], 2),
-                    "total": round(shieldRegen[0]+selfRep[0]+selfRep[1]+selfRep[2], 2)
+                    "total": round(shieldRegen[0] + selfRep[0] + selfRep[1] + selfRep[2], 2)
                 },
                 "sustained": {
                     "shieldRegen": round(shieldRegen[0], 2),
                     "shieldBoost": round(sustainRep[0], 2),
                     "armor": round(sustainRep[1], 2),
                     "hull": round(sustainRep[2], 2),
-                    "total": round(shieldRegen[0]+sustainRep[0]+sustainRep[1]+sustainRep[2], 2)
+                    "total": round(shieldRegen[0] + sustainRep[0] + sustainRep[1] + sustainRep[2], 2)
                 }
             }
         },
         "misc": {
-            "shipName": fit.ship.item.name,
-            "shipItemId": fit.ship.item.ID,
+            "ship": {
+                "id":   fit.ship.item.ID,
+                "name": fit.ship.item.name,
+                "cpuOutput": round(fit.ship.getModifiedItemAttr("cpuOutput"), 2),
+                "powerOutput": round(fit.ship.getModifiedItemAttr("powerOutput"), 2)
+            },
             "maxSpeed": round(fit.maxSpeed, 2),
             "signature": round(fit.ship.getModifiedItemAttr("signatureRadius"), 2),
             "capacitor": {
@@ -274,8 +282,6 @@ def exportAsJson(fit, callback):
     }
     from eos.const import SpoolType
     return json.dumps(data)
-
-
 
 
 def exportFitStats(fit, callback):
