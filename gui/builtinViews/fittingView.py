@@ -365,7 +365,6 @@ class FittingView(d.Display):
                 from service.port import Port
                 exp = Port().exportFitStatsJson(fit_db)
                 print(exp)
-                import eos
                 sFit.deleteFit(fitID)
                 wx.PostEvent(self.mainFrame, GE.FitRemoved(fitID=fitID))
                 import sys

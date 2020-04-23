@@ -210,14 +210,14 @@ class MainFrame(wx.Frame):
         self.SetSizer(mainSizer)
 
         # Add menu
-        self.addPageId = wx.NewId()
-        self.closePageId = wx.NewId()
-        self.closeAllPagesId = wx.NewId()
-        self.hiddenGraphsId = wx.NewId()
+        # self.addPageId = wx.NewId()
+        # self.closePageId = wx.NewId()
+        # self.closeAllPagesId = wx.NewId()
+        # self.hiddenGraphsId = wx.NewId()
 
-        self.widgetInspectMenuID = wx.NewId()
-        self.SetMenuBar(MainMenuBar(self))
-        self.registerMenu()
+        # self.widgetInspectMenuID = wx.NewId()
+        # self.SetMenuBar(MainMenuBar(self))
+        # self.registerMenu()
 
         # Internal vars to keep track of other windows
         self.statsWnds = []
@@ -226,13 +226,13 @@ class MainFrame(wx.Frame):
         self.Bind(wx.EVT_CLOSE, self.OnClose)
 
         # Show ourselves
-        self.Show()
+        # self.Show()
 
         self.LoadPreviousOpenFits()
 
         # Check for updates
         self.sUpdate = Update.getInstance()
-        #self.sUpdate.CheckUpdate(self.ShowUpdateBox)
+        # self.sUpdate.CheckUpdate(self.ShowUpdateBox)
 
         self.Bind(GE.EVT_SSO_LOGIN, self.onSSOLogin)
 
