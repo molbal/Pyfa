@@ -1243,7 +1243,7 @@ class _TabsContainer(wx.Panel):
         img = fx_bmp.ConvertToImage()
         if not img.HasAlpha():
             img.InitAlpha()
-        img = img.Blur(2)
+        img = img.Blur(1)
         img = img.AdjustChannels(0.3, 0.3, 0.3, 0.35)
         return wx.Bitmap(img)
 

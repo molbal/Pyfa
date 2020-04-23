@@ -206,6 +206,13 @@ def exportAsJson(fit, callback):
     remoteRep = [remoteRepObj.shield, remoteRepObj.armor, remoteRepObj.hull]
     shieldRegen = [fit.effectiveSustainableTank["passiveShield"], 0, 0]
 
+    cpuUsed = fit.cpuUsed
+    pgUsed = fit.pgUsed
+    calibrationUsed = fit.calibrationUsed
+    droneBandwidthUsed = fit.droneBandwidthUsed
+    droneBayUsed = fit.droneBayUsed
+    activeDrones = fit.activeDrones
+    warpSpeed = fit.warpSpeed
     from eos.utils.spoolSupport import SpoolOptions
     data = {
         "offense": {
@@ -262,8 +269,20 @@ def exportAsJson(fit, callback):
             "ship": {
                 "id":   fit.ship.item.ID,
                 "name": fit.ship.item.name,
-                "cpuOutput": round(fit.ship.getModifiedItemAttr("cpuOutput"), 2),
-                "powerOutput": round(fit.ship.getModifiedItemAttr("powerOutput"), 2)
+                "cpuMax": round(fit.ship.getModifiedItemAttr("cpuOutput"), 2),
+                "powerMax": round(fit.ship.getModifiedItemAttr("powerOutput"), 2),
+                "cpuUsed": cpuUsed,
+                "pgUsed": pgUsed,
+                "calibrationUsed": calibrationUsed,
+                "warpSpeed": warpSpeed
+                # "cpuUsage": round(fit.cpuUsed(), 2)
+                # "all": fit.ship.itemModifiedAttributes.
+            },
+            "drones": {
+                "activeDrones": activeDrones,
+                "droneBayTotal": fit.ship.getModifiedItemAttr("droneCapacity"),
+                "droneBandwidthUsed": droneBandwidthUsed,
+                "droneBayUsed": droneBayUsed,
             },
             "maxSpeed": round(fit.maxSpeed, 2),
             "signature": round(fit.ship.getModifiedItemAttr("signatureRadius"), 2),

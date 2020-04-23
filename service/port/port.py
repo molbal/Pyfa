@@ -20,6 +20,7 @@
 
 import re
 import os
+import sys
 import threading
 import xml.dom
 import xml.parsers.expat
@@ -330,4 +331,11 @@ class Port:
 
     @staticmethod
     def exportFitStatsJson(fit, callback=None):
-        return exportAsJson(fit, callback=callback)
+        try:
+            return exportAsJson(fit, callback=callback)
+        except:
+            import json
+            print(json.dumps({
+                "error": "Could not calculate fit stats"
+            }))
+            sys.exit(1)
