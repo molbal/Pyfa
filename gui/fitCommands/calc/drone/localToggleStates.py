@@ -25,7 +25,11 @@ class CalcToggleLocalDroneStatesCommand(wx.Command):
         positions = self.positions[:]
         if self.mainPosition not in positions:
             positions.append(self.mainPosition)
-        self.savedActiveAmounts = {p: fit.drones[p].amountActive for p in positions}
+        try:
+            self.savedActiveAmounts = {p: fit.drones[p].amountActive for p in positions}
+        except:
+            pyfalog.warn('Could not toggle local drone state at position {}/{} for fit {}'.format(self.mainPosition, self.positions, self.fitID))
+            return True
 
         if self.forceActiveAmounts is not None:
             for position, amountActive in self.forceActiveAmounts.items():

@@ -46,11 +46,17 @@ class ErrorHandler:
 
             if cls.__parent is None:
                 app = wx.App(False)
-                cls.__frame = ErrorFrame(None)
-                cls.__frame.addException("".join(t))
-                cls.__frame.Show()
-                app.MainLoop()
-                sys.exit()
+                # cls.__frame = ErrorFrame(None)
+                # cls.__frame.addException("".join(t))
+                # cls.__frame.Show()
+                # app.MainLoop()
+                import json
+                print(json.dumps({
+                    "error": "Could not calculate fit",
+                    "exceptionName": exc_type.__class__.__name__,
+                    "exceptionValue": t
+                }))
+                sys.exit(1)
             else:
                 if not cls.__frame:
                     cls.__frame = ErrorFrame(cls.__parent)
