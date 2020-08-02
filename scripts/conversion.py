@@ -16,328 +16,226 @@ rename_phrase = " renamed to "
 conversion_phrase = " converted to "
 
 text = """
-    Upgraded Armor EM Hardener I converted to Experimental Enduring EM Armor Hardener I
-    Upgraded Armor Explosive Hardener I converted to Experimental Enduring Explosive Armor Hardener I
-    Upgraded Armor Kinetic Hardener I converted to Experimental Enduring Kinetic Armor Hardener I
-    Upgraded Armor Thermal Hardener I converted to Experimental Enduring Thermal Armor Hardener I
-    Limited Armor EM Hardener I converted to Prototype Compact EM Armor Hardener I
-    Limited Armor Explosive Hardener I converted to Prototype Compact Explosive Armor Hardener I
-    Limited Armor Kinetic Hardener I converted to Prototype Compact Kinetic Armor Hardener I
-    Limited Armor Thermal Hardener I converted to Prototype Compact Thermal Armor Hardener I
-    Adaptive Invulnerability Shield Hardener I renamed to Multispectrum Shield Hardener I
-    Gistum C-Type Adaptive Invulnerability Shield Hardener renamed to Gistum C-Type Multispectrum Shield Hardener
-    Adaptive Invulnerability Shield Hardener II renamed to Multispectrum Shield Hardener II
-    Anti-Explosive Shield Hardener I renamed to Explosive Shield Hardener I
-    Anti-Kinetic Shield Hardener I renamed to Kinetic Shield Hardener I
-    Anti-EM Shield Hardener I renamed to EM Shield Hardener I
-    Anti-Thermal Shield Hardener I renamed to Thermal Shield Hardener I
-    Anti-Explosive Shield Hardener II renamed to Explosive Shield Hardener II
-    Anti-Kinetic Shield Hardener II renamed to Kinetic Shield Hardener II
-    Anti-EM Shield Hardener II renamed to EM Shield Hardener II
-    Anti-Thermal Shield Hardener II renamed to Thermal Shield Hardener II
-    Gistum B-Type Adaptive Invulnerability Shield Hardener renamed to Gistum B-Type Multispectrum Shield Hardener
-    Gistum A-Type Adaptive Invulnerability Shield Hardener renamed to Gistum A-Type Multispectrum Shield Hardener
-    Pithum A-Type Adaptive Invulnerability Shield Hardener renamed to Pithum A-Type Multispectrum Shield Hardener
-    Pithum B-Type Adaptive Invulnerability Shield Hardener renamed to Pithum B-Type Multispectrum Shield Hardener
-    Pithum C-Type Adaptive Invulnerability Shield Hardener renamed to Pithum C-Type Multispectrum Shield Hardener
-    Compact Anti-Kinetic Shield Hardener renamed to Compact Kinetic Shield Hardener
-    Compact Anti-EM Shield Hardener renamed to Compact EM Shield Hardener
-    Compact Adaptive Invulnerability Shield Hardener renamed to Compact Multispectrum Shield Hardener
-    Compact Anti-Explosive Shield Hardener renamed to Compact Explosive Shield Hardener
-    Compact Anti-Thermal Shield Hardener renamed to Compact Thermal Shield Hardener
-    Armor Thermal Hardener I renamed to Thermal Armor Hardener I
-    Armor EM Hardener I renamed to EM Armor Hardener I
-    Armor Explosive Hardener I renamed to Explosive Armor Hardener I
-    Armor Kinetic Hardener I renamed to Kinetic Armor Hardener I
-    Armor EM Hardener II renamed to EM Armor Hardener II
-    Armor Kinetic Hardener II renamed to Kinetic Armor Hardener II
-    Armor Explosive Hardener II renamed to Explosive Armor Hardener II
-    Armor Thermal Hardener II renamed to Thermal Armor Hardener II
-    Dread Guristas Anti-EM Shield Hardener renamed to Dread Guristas EM Shield Hardener
-    Dread Guristas Anti-Thermal Shield Hardener renamed to Dread Guristas Thermal Shield Hardener
-    Dread Guristas Anti-Explosive Shield Hardener renamed to Dread Guristas Explosive Shield Hardener
-    Dread Guristas Anti-Kinetic Shield Hardener renamed to Dread Guristas Kinetic Shield Hardener
-    Dread Guristas Adaptive Invulnerability Shield Hardener renamed to Dread Guristas Multispectrum Shield Hardener
-    True Sansha Armor EM Hardener renamed to True Sansha EM Armor Hardener
-    Dark Blood Armor EM Hardener renamed to Dark Blood EM Armor Hardener
-    True Sansha Armor Explosive Hardener renamed to True Sansha Explosive Armor Hardener
-    Dark Blood Armor Explosive Hardener renamed to Dark Blood Explosive Armor Hardener
-    True Sansha Armor Kinetic Hardener renamed to True Sansha Kinetic Armor Hardener
-    Dark Blood Armor Kinetic Hardener renamed to Dark Blood Kinetic Armor Hardener
-    True Sansha Armor Thermal Hardener renamed to True Sansha Thermal Armor Hardener
-    Dark Blood Armor Thermal Hardener renamed to Dark Blood Thermal Armor Hardener
-    Domination Armor EM Hardener renamed to Domination EM Armor Hardener
-    Domination Armor Explosive Hardener renamed to Domination Explosive Armor Hardener
-    Domination Armor Kinetic Hardener renamed to Domination Kinetic Armor Hardener
-    Domination Armor Thermal Hardener renamed to Domination Thermal Armor Hardener
-    Domination Anti-EM Shield Hardener renamed to Domination EM Shield Hardener
-    Domination Anti-Thermal Shield Hardener renamed to Domination Thermal Shield Hardener
-    Domination Anti-Explosive Shield Hardener renamed to Domination Explosive Shield Hardener
-    Domination Anti-Kinetic Shield Hardener renamed to Domination Kinetic Shield Hardener
-    Domination Adaptive Invulnerability Shield Hardener renamed to Domination Multispectrum Shield Hardener
-    Shadow Serpentis Armor EM Hardener renamed to Shadow Serpentis EM Armor Hardener
-    Shadow Serpentis Armor Explosive Hardener renamed to Shadow Serpentis Explosive Armor Hardener
-    Shadow Serpentis Armor Kinetic Hardener renamed to Shadow Serpentis Kinetic Armor Hardener
-    Shadow Serpentis Armor Thermal Hardener renamed to Shadow Serpentis Thermal Armor Hardener
-    Kaikka's Modified Anti-Kinetic Shield Hardener renamed to Kaikka's Modified Kinetic Shield Hardener
-    Thon's Modified Anti-Kinetic Shield Hardener renamed to Thon's Modified Kinetic Shield Hardener
-    Vepas's Modified Anti-Kinetic Shield Hardener renamed to Vepas's Modified Kinetic Shield Hardener
-    Estamel's Modified Anti-Kinetic Shield Hardener renamed to Estamel's Modified Kinetic Shield Hardener
-    Kaikka's Modified Anti-EM Shield Hardener renamed to Kaikka's Modified EM Shield Hardener
-    Thon's Modified Anti-EM Shield Hardener renamed to Thon's Modified EM Shield Hardener
-    Vepas's Modified Anti-EM Shield Hardener renamed to Vepas's Modified EM Shield Hardener
-    Estamel's Modified Anti-EM Shield Hardener renamed to Estamel's Modified EM Shield Hardener
-    Kaikka's Modified Anti-Explosive Shield Hardener renamed to Kaikka's Modified Explosive Shield Hardener
-    Thon's Modified Anti-Explosive Shield Hardener renamed to Thon's Modified Explosive Shield Hardener
-    Vepas's Modified Anti-Explosive Shield Hardener renamed to Vepas's Modified Explosive Shield Hardener
-    Estamel's Modified Anti-Explosive Shield Hardener renamed to Estamel's Modified Explosive Shield Hardener
-    Kaikka's Modified Anti-Thermal Shield Hardener renamed to Kaikka's Modified Thermal Shield Hardener
-    Thon's Modified Anti-Thermal Shield Hardener renamed to Thon's Modified Thermal Shield Hardener
-    Vepas's Modified Anti-Thermal Shield Hardener renamed to Vepas's Modified Thermal Shield Hardener
-    Estamel's Modified Anti-Thermal Shield Hardener renamed to Estamel's Modified Thermal Shield Hardener
-    Kaikka's Modified Adaptive Invulnerability Shield Hardener renamed to Kaikka's Modified Multispectrum Shield Hardener
-    Thon's Modified Adaptive Invulnerability Shield Hardener renamed to Thon's Modified Multispectrum Shield Hardener
-    Vepas's Modified Adaptive Invulnerability Shield Hardener renamed to Vepas's Modified Multispectrum Shield Hardener
-    Estamel's Modified Adaptive Invulnerability Shield Hardener renamed to Estamel's Modified Multispectrum Shield Hardener
-    Brokara's Modified Armor EM Hardener renamed to Brokara's Modified EM Armor Hardener
-    Tairei's Modified Armor EM Hardener renamed to Tairei's Modified EM Armor Hardener
-    Selynne's Modified Armor EM Hardener renamed to Selynne's Modified EM Armor Hardener
-    Raysere's Modified Armor EM Hardener renamed to Raysere's Modified EM Armor Hardener
-    Vizan's Modified Armor EM Hardener renamed to Vizan's Modified EM Armor Hardener
-    Ahremen's Modified Armor EM Hardener renamed to Ahremen's Modified EM Armor Hardener
-    Chelm's Modified Armor EM Hardener renamed to Chelm's Modified EM Armor Hardener
-    Draclira's Modified Armor EM Hardener renamed to Draclira's Modified EM Armor Hardener
-    Brokara's Modified Armor Thermal Hardener renamed to Brokara's Modified Thermal Armor Hardener
-    Tairei's Modified Armor Thermal Hardener renamed to Tairei's Modified Thermal Armor Hardener
-    Selynne's Modified Armor Thermal Hardener renamed to Selynne's Modified Thermal Armor Hardener
-    Raysere's Modified Armor Thermal Hardener renamed to Raysere's Modified Thermal Armor Hardener
-    Vizan's Modified Armor Thermal Hardener renamed to Vizan's Modified Thermal Armor Hardener
-    Ahremen's Modified Armor Thermal Hardener renamed to Ahremen's Modified Thermal Armor Hardener
-    Chelm's Modified Armor Thermal Hardener renamed to Chelm's Modified Thermal Armor Hardener
-    Draclira's Modified Armor Thermal Hardener renamed to Draclira's Modified Thermal Armor Hardener
-    Brokara's Modified Armor Kinetic Hardener renamed to Brokara's Modified Kinetic Armor Hardener
-    Tairei's Modified Armor Kinetic Hardener renamed to Tairei's Modified Kinetic Armor Hardener
-    Selynne's Modified Armor Kinetic Hardener renamed to Selynne's Modified Kinetic Armor Hardener
-    Raysere's Modified Armor Kinetic Hardener renamed to Raysere's Modified Kinetic Armor Hardener
-    Vizan's Modified Armor Kinetic Hardener renamed to Vizan's Modified Kinetic Armor Hardener
-    Ahremen's Modified Armor Kinetic Hardener renamed to Ahremen's Modified Kinetic Armor Hardener
-    Chelm's Modified Armor Kinetic Hardener renamed to Chelm's Modified Kinetic Armor Hardener
-    Draclira's Modified Armor Kinetic Hardener renamed to Draclira's Modified Kinetic Armor Hardener
-    Brokara's Modified Armor Explosive Hardener renamed to Brokara's Modified Explosive Armor Hardener
-    Tairei's Modified Armor Explosive Hardener renamed to Tairei's Modified Explosive Armor Hardener
-    Selynne's Modified Armor Explosive Hardener renamed to Selynne's Modified Explosive Armor Hardener
-    Raysere's Modified Armor Explosive Hardener renamed to Raysere's Modified Explosive Armor Hardener
-    Vizan's Modified Armor Explosive Hardener renamed to Vizan's Modified Explosive Armor Hardener
-    Ahremen's Modified Armor Explosive Hardener renamed to Ahremen's Modified Explosive Armor Hardener
-    Chelm's Modified Armor Explosive Hardener renamed to Chelm's Modified Explosive Armor Hardener
-    Draclira's Modified Armor Explosive Hardener renamed to Draclira's Modified Explosive Armor Hardener
-    Brynn's Modified Armor EM Hardener renamed to Brynn's Modified EM Armor Hardener
-    Tuvan's Modified Armor EM Hardener renamed to Tuvan's Modified EM Armor Hardener
-    Setele's Modified Armor EM Hardener renamed to Setele's Modified EM Armor Hardener
-    Cormack's Modified Armor EM Hardener renamed to Cormack's Modified EM Armor Hardener
-    Brynn's Modified Armor Thermal Hardener renamed to Brynn's Modified Thermal Armor Hardener
-    Tuvan's Modified Armor Thermal Hardener renamed to Tuvan's Modified Thermal Armor Hardener
-    Setele's Modified Armor Thermal Hardener renamed to Setele's Modified Thermal Armor Hardener
-    Cormack's Modified Armor Thermal Hardener renamed to Cormack's Modified Thermal Armor Hardener
-    Brynn's Modified Armor Kinetic Hardener renamed to Brynn's Modified Kinetic Armor Hardener
-    Tuvan's Modified Armor Kinetic Hardener renamed to Tuvan's Modified Kinetic Armor Hardener
-    Setele's Modified Armor Kinetic Hardener renamed to Setele's Modified Kinetic Armor Hardener
-    Cormack's Modified Armor Kinetic Hardener renamed to Cormack's Modified Kinetic Armor Hardener
-    Brynn's Modified Armor Explosive Hardener renamed to Brynn's Modified Explosive Armor Hardener
-    Tuvan's Modified Armor Explosive Hardener renamed to Tuvan's Modified Explosive Armor Hardener
-    Setele's Modified Armor Explosive Hardener renamed to Setele's Modified Explosive Armor Hardener
-    Cormack's Modified Armor Explosive Hardener renamed to Cormack's Modified Explosive Armor Hardener
-    Imperial Navy Armor Thermal Hardener renamed to Imperial Navy Thermal Armor Hardener
-    Imperial Navy Armor Kinetic Hardener renamed to Imperial Navy Kinetic Armor Hardener
-    Imperial Navy Armor Explosive Hardener renamed to Imperial Navy Explosive Armor Hardener
-    Imperial Navy Armor EM Hardener renamed to Imperial Navy EM Armor Hardener
-    Republic Fleet Armor Thermal Hardener renamed to Republic Fleet Thermal Armor Hardener
-    Republic Fleet Armor Kinetic Hardener renamed to Republic Fleet Kinetic Armor Hardener
-    Republic Fleet Armor Explosive Hardener renamed to Republic Fleet Explosive Armor Hardener
-    Republic Fleet Armor EM Hardener renamed to Republic Fleet EM Armor Hardener
-    Experimental Armor EM Hardener I renamed to Experimental Enduring EM Armor Hardener I
-    Prototype Armor EM Hardener I renamed to Prototype Compact EM Armor Hardener I
-    Experimental Armor Explosive Hardener I renamed to Experimental Enduring Explosive Armor Hardener I
-    Prototype Armor Explosive Hardener I renamed to Prototype Compact Explosive Armor Hardener I
-    Experimental Armor Kinetic Hardener I renamed to Experimental Enduring Kinetic Armor Hardener I
-    Prototype Armor Kinetic Hardener I renamed to Prototype Compact Kinetic Armor Hardener I
-    Experimental Armor Thermal Hardener I renamed to Experimental Enduring Thermal Armor Hardener I
-    Prototype Armor Thermal Hardener I renamed to Prototype Compact Thermal Armor Hardener I
-    Caldari Navy Anti-Kinetic Shield Hardener renamed to Caldari Navy Kinetic Shield Hardener
-    Caldari Navy Anti-Explosive Shield Hardener renamed to Caldari Navy Explosive Shield Hardener
-    Caldari Navy Anti-Thermal Shield Hardener renamed to Caldari Navy Thermal Shield Hardener
-    Caldari Navy Adaptive Invulnerability Shield Hardener renamed to Caldari Navy Multispectrum Shield Hardener
-    Caldari Navy Anti-EM Shield Hardener renamed to Caldari Navy EM Shield Hardener
-    Ammatar Navy Armor EM Hardener renamed to Ammatar Navy EM Armor Hardener
-    Ammatar Navy Armor Explosive Hardener renamed to Ammatar Navy Explosive Armor Hardener
-    Ammatar Navy Armor Kinetic Hardener renamed to Ammatar Navy Kinetic Armor Hardener
-    Ammatar Navy Armor Thermal Hardener renamed to Ammatar Navy Thermal Armor Hardener
-    Federation Navy Armor EM Hardener renamed to Federation Navy EM Armor Hardener
-    Federation Navy Armor Explosive Hardener renamed to Federation Navy Explosive Armor Hardener
-    Federation Navy Armor Kinetic Hardener renamed to Federation Navy Kinetic Armor Hardener
-    Federation Navy Armor Thermal Hardener renamed to Federation Navy Thermal Armor Hardener
-    Corpus C-Type Armor EM Hardener renamed to Corpus C-Type EM Armor Hardener
-    Centus C-Type Armor EM Hardener renamed to Centus C-Type EM Armor Hardener
-    Corpus C-Type Armor Explosive Hardener renamed to Corpus C-Type Explosive Armor Hardener
-    Centus C-Type Armor Explosive Hardener renamed to Centus C-Type Explosive Armor Hardener
-    Corpus C-Type Armor Kinetic Hardener renamed to Corpus C-Type Kinetic Armor Hardener
-    Centus C-Type Armor Kinetic Hardener renamed to Centus C-Type Kinetic Armor Hardener
-    Corpus C-Type Armor Thermal Hardener renamed to Corpus C-Type Thermal Armor Hardener
-    Centus C-Type Armor Thermal Hardener renamed to Centus C-Type Thermal Armor Hardener
-    Corpus B-Type Armor EM Hardener renamed to Corpus B-Type EM Armor Hardener
-    Centus B-Type Armor EM Hardener renamed to Centus B-Type EM Armor Hardener
-    Corpus B-Type Armor Explosive Hardener renamed to Corpus B-Type Explosive Armor Hardener
-    Centus B-Type Armor Explosive Hardener renamed to Centus B-Type Explosive Armor Hardener
-    Corpus B-Type Armor Kinetic Hardener renamed to Corpus B-Type Kinetic Armor Hardener
-    Centus B-Type Armor Kinetic Hardener renamed to Centus B-Type Kinetic Armor Hardener
-    Corpus B-Type Armor Thermal Hardener renamed to Corpus B-Type Thermal Armor Hardener
-    Centus B-Type Armor Thermal Hardener renamed to Centus B-Type Thermal Armor Hardener
-    Corpus A-Type Armor Thermal Hardener renamed to Corpus A-Type Thermal Armor Hardener
-    Centus A-Type Armor Thermal Hardener renamed to Centus A-Type Thermal Armor Hardener
-    Corpus A-Type Armor Kinetic Hardener renamed to Corpus A-Type Kinetic Armor Hardener
-    Centus A-Type Armor Kinetic Hardener renamed to Centus A-Type Kinetic Armor Hardener
-    Corpus A-Type Armor Explosive Hardener renamed to Corpus A-Type Explosive Armor Hardener
-    Centus A-Type Armor Explosive Hardener renamed to Centus A-Type Explosive Armor Hardener
-    Corpus A-Type Armor EM Hardener renamed to Corpus A-Type EM Armor Hardener
-    Centus A-Type Armor EM Hardener renamed to Centus A-Type EM Armor Hardener
-    Corpus X-Type Armor EM Hardener renamed to Corpus X-Type EM Armor Hardener
-    Centus X-Type Armor EM Hardener renamed to Centus X-Type EM Armor Hardener
-    Corpus X-Type Armor Explosive Hardener renamed to Corpus X-Type Explosive Armor Hardener
-    Centus X-Type Armor Explosive Hardener renamed to Centus X-Type Explosive Armor Hardener
-    Corpus X-Type Armor Kinetic Hardener renamed to Corpus X-Type Kinetic Armor Hardener
-    Centus X-Type Armor Kinetic Hardener renamed to Centus X-Type Kinetic Armor Hardener
-    Corpus X-Type Armor Thermal Hardener renamed to Corpus X-Type Thermal Armor Hardener
-    Centus X-Type Armor Thermal Hardener renamed to Centus X-Type Thermal Armor Hardener
-    Core C-Type Armor EM Hardener renamed to Core C-Type EM Armor Hardener
-    Core C-Type Armor Explosive Hardener renamed to Core C-Type Explosive Armor Hardener
-    Core C-Type Armor Kinetic Hardener renamed to Core C-Type Kinetic Armor Hardener
-    Core C-Type Armor Thermal Hardener renamed to Core C-Type Thermal Armor Hardener
-    Core B-Type Armor EM Hardener renamed to Core B-Type EM Armor Hardener
-    Core B-Type Armor Explosive Hardener renamed to Core B-Type Explosive Armor Hardener
-    Core B-Type Armor Kinetic Hardener renamed to Core B-Type Kinetic Armor Hardener
-    Core B-Type Armor Thermal Hardener renamed to Core B-Type Thermal Armor Hardener
-    Core A-Type Armor EM Hardener renamed to Core A-Type EM Armor Hardener
-    Core A-Type Armor Explosive Hardener renamed to Core A-Type Explosive Armor Hardener
-    Core A-Type Armor Kinetic Hardener renamed to Core A-Type Kinetic Armor Hardener
-    Core A-Type Armor Thermal Hardener renamed to Core A-Type Thermal Armor Hardener
-    Core X-Type Armor EM Hardener renamed to Core X-Type EM Armor Hardener
-    Core X-Type Armor Explosive Hardener renamed to Core X-Type Explosive Armor Hardener
-    Core X-Type Armor Kinetic Hardener renamed to Core X-Type Kinetic Armor Hardener
-    Core X-Type Armor Thermal Hardener renamed to Core X-Type Thermal Armor Hardener
-    Gist C-Type Anti-Kinetic Shield Hardener renamed to Gist C-Type Kinetic Shield Hardener
-    Pith C-Type Anti-Kinetic Shield Hardener renamed to Pith C-Type Kinetic Shield Hardener
-    Gist C-Type Anti-Explosive Shield Hardener renamed to Gist C-Type Explosive Shield Hardener
-    Pith C-Type Anti-Explosive Shield Hardener renamed to Pith C-Type Explosive Shield Hardener
-    Gist C-Type Anti-Thermal Shield Hardener renamed to Gist C-Type Thermal Shield Hardener
-    Pith C-Type Anti-Thermal Shield Hardener renamed to Pith C-Type Thermal Shield Hardener
-    Gist C-Type Anti-EM Shield Hardener renamed to Gist C-Type EM Shield Hardener
-    Pith C-Type Anti-EM Shield Hardener renamed to Pith C-Type EM Shield Hardener
-    Gist B-Type Anti-EM Shield Hardener renamed to Gist B-Type EM Shield Hardener
-    Pith B-Type Anti-EM Shield Hardener renamed to Pith B-Type EM Shield Hardener
-    Gist B-Type Anti-Thermal Shield Hardener renamed to Gist B-Type Thermal Shield Hardener
-    Pith B-Type Anti-Thermal Shield Hardener renamed to Pith B-Type Thermal Shield Hardener
-    Gist B-Type Anti-Explosive Shield Hardener renamed to Gist B-Type Explosive Shield Hardener
-    Pith B-Type Anti-Explosive Shield Hardener renamed to Pith B-Type Explosive Shield Hardener
-    Gist B-Type Anti-Kinetic Shield Hardener renamed to Gist B-Type Kinetic Shield Hardener
-    Pith B-Type Anti-Kinetic Shield Hardener renamed to Pith B-Type Kinetic Shield Hardener
-    Gist A-Type Anti-Kinetic Shield Hardener renamed to Gist A-Type Kinetic Shield Hardener
-    Pith A-Type Anti-Kinetic Shield Hardener renamed to Pith A-Type Kinetic Shield Hardener
-    Gist A-Type Anti-Explosive Shield Hardener renamed to Gist A-Type Explosive Shield Hardener
-    Pith A-Type Anti-Explosive Shield Hardener renamed to Pith A-Type Explosive Shield Hardener
-    Gist A-Type Anti-Thermal Shield Hardener renamed to Gist A-Type Thermal Shield Hardener
-    Pith A-Type Anti-Thermal Shield Hardener renamed to Pith A-Type Thermal Shield Hardener
-    Gist A-Type Anti-EM Shield Hardener renamed to Gist A-Type EM Shield Hardener
-    Pith A-Type Anti-EM Shield Hardener renamed to Pith A-Type EM Shield Hardener
-    Gist X-Type Anti-EM Shield Hardener renamed to Gist X-Type EM Shield Hardener
-    Pith X-Type Anti-EM Shield Hardener renamed to Pith X-Type EM Shield Hardener
-    Gist X-Type Anti-Thermal Shield Hardener renamed to Gist X-Type Thermal Shield Hardener
-    Pith X-Type Anti-Thermal Shield Hardener renamed to Pith X-Type Thermal Shield Hardener
-    Gist X-Type Anti-Explosive Shield Hardener renamed to Gist X-Type Explosive Shield Hardener
-    Pith X-Type Anti-Explosive Shield Hardener renamed to Pith X-Type Explosive Shield Hardener
-    Gist X-Type Anti-Kinetic Shield Hardener renamed to Gist X-Type Kinetic Shield Hardener
-    Pith X-Type Anti-Kinetic Shield Hardener renamed to Pith X-Type Kinetic Shield Hardener
-    'Nugget' Anti-Kinetic Shield Hardener renamed to 'Nugget' Kinetic Shield Hardener
-    'Desert Heat' Anti-Thermal Shield Hardener renamed to 'Desert Heat' Thermal Shield Hardener
-    'Posse' Adaptive Invulnerability Shield Hardener renamed to 'Posse' Multispectrum Shield Hardener
-    'Poacher' Anti-EM Shield Hardener renamed to 'Poacher' EM Shield Hardener
-    'Snake Eyes' Anti-Explosive Shield Hardener renamed to 'Snake Eyes' Explosive Shield Hardener
-    Large Anti-EM Pump I renamed to Large EM Armor Reinforcer I
-    Large Anti-Explosive Pump I renamed to Large Explosive Armor Reinforcer I
-    Large Anti-Kinetic Pump I renamed to Large Kinetic Armor Reinforcer I
-    Large Anti-Thermal Pump I renamed to Large Thermal Armor Reinforcer I
-    Large Anti-EM Screen Reinforcer I renamed to Large EM Shield Reinforcer I
-    Large Anti-Explosive Screen Reinforcer I renamed to Large Explosive Shield Reinforcer I
-    Large Anti-Kinetic Screen Reinforcer I renamed to Large Kinetic Shield Reinforcer I
-    Large Anti-Thermal Screen Reinforcer I renamed to Large Thermal Shield Reinforcer I
-    Large Anti-EM Pump II renamed to Large EM Armor Reinforcer II
-    Large Anti-Explosive Pump II renamed to Large Explosive Armor Reinforcer II
-    Large Anti-Kinetic Pump II renamed to Large Kinetic Armor Reinforcer II
-    Large Anti-Thermal Pump II renamed to Large Thermal Armor Reinforcer II
-    Large Anti-EM Screen Reinforcer II renamed to Large EM Shield Reinforcer II
-    Large Anti-Explosive Screen Reinforcer II renamed to Large Explosive Shield Reinforcer II
-    Large Anti-Kinetic Screen Reinforcer II renamed to Large Kinetic Shield Reinforcer II
-    Large Anti-Thermal Screen Reinforcer II renamed to Large Thermal Shield Reinforcer II
-    Khanid Navy Armor EM Hardener renamed to Khanid Navy EM Armor Hardener
-    Khanid Navy Armor Explosive Hardener renamed to Khanid Navy Explosive Armor Hardener
-    Khanid Navy Armor Kinetic Hardener renamed to Khanid Navy Kinetic Armor Hardener
-    Khanid Navy Armor Thermal Hardener renamed to Khanid Navy Thermal Armor Hardener
-    Civilian Anti-Thermal Shield Hardener renamed to Civilian Thermal Shield Hardener
-    Civilian Anti-EM Shield Hardener renamed to Civilian EM Shield Hardener
-    Civilian Anti-Explosive Shield Hardener renamed to Civilian Explosive Shield Hardener
-    Civilian Anti-Kinetic Shield Hardener renamed to Civilian Kinetic Shield Hardener
-    Small Anti-EM Pump I renamed to Small EM Armor Reinforcer I
-    Medium Anti-EM Pump I renamed to Medium EM Armor Reinforcer I
-    Capital Anti-EM Pump I renamed to Capital EM Armor Reinforcer I
-    Small Anti-EM Pump II renamed to Small EM Armor Reinforcer II
-    Medium Anti-EM Pump II renamed to Medium EM Armor Reinforcer II
-    Capital Anti-EM Pump II renamed to Capital EM Armor Reinforcer II
-    Small Anti-Explosive Pump I renamed to Small Explosive Armor Reinforcer I
-    Medium Anti-Explosive Pump I renamed to Medium Explosive Armor Reinforcer I
-    Capital Anti-Explosive Pump I renamed to Capital Explosive Armor Reinforcer I
-    Small Anti-Explosive Pump II renamed to Small Explosive Armor Reinforcer II
-    Medium Anti-Explosive Pump II renamed to Medium Explosive Armor Reinforcer II
-    Capital Anti-Explosive Pump II renamed to Capital Explosive Armor Reinforcer II
-    Small Anti-Kinetic Pump I renamed to Small Kinetic Armor Reinforcer I
-    Medium Anti-Kinetic Pump I renamed to Medium Kinetic Armor Reinforcer I
-    Capital Anti-Kinetic Pump I renamed to Capital Kinetic Armor Reinforcer I
-    Small Anti-Kinetic Pump II renamed to Small Kinetic Armor Reinforcer II
-    Medium Anti-Kinetic Pump II renamed to Medium Kinetic Armor Reinforcer II
-    Capital Anti-Kinetic Pump II renamed to Capital Kinetic Armor Reinforcer II
-    Small Anti-Thermal Pump I renamed to Small Thermal Armor Reinforcer I
-    Medium Anti-Thermal Pump I renamed to Medium Thermal Armor Reinforcer I
-    Capital Anti-Thermal Pump I renamed to Capital Thermal Armor Reinforcer I
-    Small Anti-Thermal Pump II renamed to Small Thermal Armor Reinforcer II
-    Medium Anti-Thermal Pump II renamed to Medium Thermal Armor Reinforcer II
-    Capital Anti-Thermal Pump II renamed to Capital Thermal Armor Reinforcer II
-    Small Anti-EM Screen Reinforcer I renamed to Small EM Shield Reinforcer I
-    Medium Anti-EM Screen Reinforcer I renamed to Medium EM Shield Reinforcer I
-    Capital Anti-EM Screen Reinforcer I renamed to Capital EM Shield Reinforcer I
-    Small Anti-EM Screen Reinforcer II renamed to Small EM Shield Reinforcer II
-    Medium Anti-EM Screen Reinforcer II renamed to Medium EM Shield Reinforcer II
-    Capital Anti-EM Screen Reinforcer II renamed to Capital EM Shield Reinforcer II
-    Small Anti-Explosive Screen Reinforcer I renamed to Small Explosive Shield Reinforcer I
-    Medium Anti-Explosive Screen Reinforcer I renamed to Medium Explosive Shield Reinforcer I
-    Capital Anti-Explosive Screen Reinforcer I renamed to Capital Explosive Shield Reinforcer I
-    Small Anti-Explosive Screen Reinforcer II renamed to Small Explosive Shield Reinforcer II
-    Medium Anti-Explosive Screen Reinforcer II renamed to Medium Explosive Shield Reinforcer II
-    Capital Anti-Explosive Screen Reinforcer II renamed to Capital Explosive Shield Reinforcer II
-    Small Anti-Kinetic Screen Reinforcer I renamed to Small Kinetic Shield Reinforcer I
-    Medium Anti-Kinetic Screen Reinforcer I renamed to Medium Kinetic Shield Reinforcer I
-    Capital Anti-Kinetic Screen Reinforcer I renamed to Capital Kinetic Shield Reinforcer I
-    Small Anti-Kinetic Screen Reinforcer II renamed to Small Kinetic Shield Reinforcer II
-    Medium Anti-Kinetic Screen Reinforcer II renamed to Medium Kinetic Shield Reinforcer II
-    Capital Anti-Kinetic Screen Reinforcer II renamed to Capital Kinetic Shield Reinforcer II
-    Small Anti-Thermal Screen Reinforcer I renamed to Small Thermal Shield Reinforcer I
-    Medium Anti-Thermal Screen Reinforcer I renamed to Medium Thermal Shield Reinforcer I
-    Capital Anti-Thermal Screen Reinforcer I renamed to Capital Thermal Shield Reinforcer I
-    Small Anti-Thermal Screen Reinforcer II renamed to Small Thermal Shield Reinforcer II
-    Medium Anti-Thermal Screen Reinforcer II renamed to Medium Thermal Shield Reinforcer II
-    Capital Anti-Thermal Screen Reinforcer II renamed to Capital Thermal Shield Reinforcer II
-    Enduring Adaptive Invulnerability Shield Hardener renamed to Enduring Multispectrum Shield Hardener
-    Enduring Anti-EM Shield Hardener renamed to Enduring EM Shield Hardener
-    Enduring Anti-Explosive Shield Hardener renamed to Enduring Explosive Shield Hardener
-    Enduring Anti-Kinetic Shield Hardener renamed to Enduring Kinetic Shield Hardener
-    Enduring Anti-Thermal Shield Hardener renamed to Enduring Thermal Shield Hardener
+    Limited Layered Plating I converted to Upgraded Layered Coating I
+    'Scarab' Layered Plating I converted to Upgraded Layered Coating I
+    'Grail' Layered Plating I converted to Upgraded Layered Coating I
+    Limited Adaptive Nano Plating I converted to Upgraded Multispectrum Coating I
+    'Collateral' Adaptive Nano Plating I converted to Upgraded Multispectrum Coating I
+    'Refuge' Adaptive Nano Plating I converted to Upgraded Multispectrum Coating I
+    Limited EM Plating I converted to Upgraded EM Coating I
+    'Contour' EM Plating I converted to Upgraded EM Coating I
+    'Spiegel' EM Plating I converted to Upgraded EM Coating I
+    Limited Explosive Plating I converted to Upgraded Explosive Coating I
+    Experimental Explosive Plating I converted to Upgraded Explosive Coating I
+    'Aegis' Explosive Plating I converted to Upgraded Explosive Coating I
+    Limited Kinetic Plating I converted to Upgraded Kinetic Coating I
+    Experimental Kinetic Plating I converted to Upgraded Kinetic Coating I
+    'Element' Kinetic Plating I converted to Upgraded Kinetic Coating I
+    Limited Thermal Plating I converted to Upgraded Thermal Coating I
+    Experimental Thermal Plating I converted to Upgraded Thermal Coating I
+    Prototype Thermal Plating I converted to Upgraded Thermal Coating I
+    Basic EM Plating renamed to 'Basic' EM Coating
+    EM Plating I renamed to EM Coating I
+    EM Plating II renamed to EM Coating II
+    Basic Explosive Plating renamed to 'Basic' Explosive Coating
+    Explosive Plating I renamed to Explosive Coating I
+    Explosive Plating II renamed to Explosive Coating II
+    Basic Layered Plating renamed to 'Basic' Layered Coating
+    Layered Plating I renamed to Layered Coating I
+    Layered Plating II renamed to Layered Coating II
+    Basic Kinetic Plating renamed to 'Basic' Kinetic Coating
+    Kinetic Plating I renamed to Kinetic Coating I
+    Kinetic Plating II renamed to Kinetic Coating II
+    Basic Thermal Plating renamed to 'Basic' Thermal Coating
+    Thermal Plating I renamed to Thermal Coating I
+    Thermal Plating II renamed to Thermal Coating II
+    Basic Adaptive Nano Plating renamed to 'Basic' Multispectrum Coating
+    Adaptive Nano Plating I renamed to Multispectrum Coating I
+    Adaptive Nano Plating II renamed to Multispectrum Coating II
+    Domination Adaptive Nano Plating renamed to Domination Multispectrum Coating
+    True Sansha Adaptive Nano Plating renamed to True Sansha Multispectrum Coating
+    Dark Blood Adaptive Nano Plating renamed to Dark Blood Multispectrum Coating
+    Domination Kinetic Plating renamed to Domination Kinetic Coating
+    True Sansha Kinetic Plating renamed to True Sansha Kinetic Coating
+    Dark Blood Kinetic Plating renamed to Dark Blood Kinetic Coating
+    Domination Explosive Plating renamed to Domination Explosive Coating
+    True Sansha Explosive Plating renamed to True Sansha Explosive Coating
+    Dark Blood Explosive Plating renamed to Dark Blood Explosive Coating
+    Domination EM Plating renamed to Domination EM Coating
+    True Sansha EM Plating renamed to True Sansha EM Coating
+    Dark Blood EM Plating renamed to Dark Blood EM Coating
+    Domination Thermal Plating renamed to Domination Thermal Coating
+    True Sansha Thermal Plating renamed to True Sansha Thermal Coating
+    Dark Blood Thermal Plating renamed to Dark Blood Thermal Coating
+    Shadow Serpentis Adaptive Nano Plating renamed to Shadow Serpentis Multispectrum Coating
+    Shadow Serpentis Kinetic Plating renamed to Shadow Serpentis Kinetic Coating
+    Shadow Serpentis Explosive Plating renamed to Shadow Serpentis Explosive Coating
+    Shadow Serpentis EM Plating renamed to Shadow Serpentis EM Coating
+    Shadow Serpentis Thermal Plating renamed to Shadow Serpentis Thermal Coating
+    Mizuro's Modified Adaptive Nano Plating renamed to Mizuro's Modified Multispectrum Coating
+    Gotan's Modified Adaptive Nano Plating renamed to Gotan's Modified Multispectrum Coating
+    Mizuro's Modified Kinetic Plating renamed to Mizuro's Modified Kinetic Coating
+    Gotan's Modified Kinetic Plating renamed to Gotan's Modified Kinetic Coating
+    Mizuro's Modified Explosive Plating renamed to Mizuro's Modified Explosive Coating
+    Gotan's Modified Explosive Plating renamed to Gotan's Modified Explosive Coating
+    Mizuro's Modified EM Plating renamed to Mizuro's Modified EM Coating
+    Gotan's Modified EM Plating renamed to Gotan's Modified EM Coating
+    Mizuro's Modified Thermal Plating renamed to Mizuro's Modified Thermal Coating
+    Gotan's Modified Thermal Plating renamed to Gotan's Modified Thermal Coating
+    Brokara's Modified Adaptive Nano Plating renamed to Brokara's Modified Multispectrum Coating
+    Tairei's Modified Adaptive Nano Plating renamed to Tairei's Modified Multispectrum Coating
+    Selynne's Modified Adaptive Nano Plating renamed to Selynne's Modified Multispectrum Coating
+    Raysere's Modified Adaptive Nano Plating renamed to Raysere's Modified Multispectrum Coating
+    Vizan's Modified Adaptive Nano Plating renamed to Vizan's Modified Multispectrum Coating
+    Ahremen's Modified Adaptive Nano Plating renamed to Ahremen's Modified Multispectrum Coating
+    Chelm's Modified Adaptive Nano Plating renamed to Chelm's Modified Multispectrum Coating
+    Draclira's Modified Adaptive Nano Plating renamed to Draclira's Modified Multispectrum Coating
+    Brokara's Modified Kinetic Plating renamed to Brokara's Modified Kinetic Coating
+    Tairei's Modified Kinetic Plating renamed to Tairei's Modified Kinetic Coating
+    Selynne's Modified Kinetic Plating renamed to Selynne's Modified Kinetic Coating
+    Raysere's Modified Kinetic Plating renamed to Raysere's Modified Kinetic Coating
+    Vizan's Modified Kinetic Plating renamed to Vizan's Modified Kinetic Coating
+    Ahremen's Modified Kinetic Plating renamed to Ahremen's Modified Kinetic Coating
+    Chelm's Modified Kinetic Plating renamed to Chelm's Modified Kinetic Coating
+    Draclira's Modified Kinetic Plating renamed to Draclira's Modified Kinetic Coating
+    Brokara's Modified Explosive Plating renamed to Brokara's Modified Explosive Coating
+    Tairei's Modified Explosive Plating renamed to Tairei's Modified Explosive Coating
+    Selynne's Modified Explosive Plating renamed to Selynne's Modified Explosive Coating
+    Raysere's Modified Explosive Plating renamed to Raysere's Modified Explosive Coating
+    Vizan's Modified Explosive Plating renamed to Vizan's Modified Explosive Coating
+    Ahremen's Modified Explosive Plating renamed to Ahremen's Modified Explosive Coating
+    Chelm's Modified Explosive Plating renamed to Chelm's Modified Explosive Coating
+    Draclira's Modified Explosive Plating renamed to Draclira's Modified Explosive Coating
+    Brokara's Modified EM Plating renamed to Brokara's Modified EM Coating
+    Tairei's Modified EM Plating renamed to Tairei's Modified EM Coating
+    Selynne's Modified EM Plating renamed to Selynne's Modified EM Coating
+    Raysere's Modified EM Plating renamed to Raysere's Modified EM Coating
+    Vizan's Modified EM Plating renamed to Vizan's Modified EM Coating
+    Ahremen's Modified EM Plating renamed to Ahremen's Modified EM Coating
+    Chelm's Modified EM Plating renamed to Chelm's Modified EM Coating
+    Draclira's Modified EM Plating renamed to Draclira's Modified EM Coating
+    Brokara's Modified Thermal Plating renamed to Brokara's Modified Thermal Coating
+    Tairei's Modified Thermal Plating renamed to Tairei's Modified Thermal Coating
+    Selynne's Modified Thermal Plating renamed to Selynne's Modified Thermal Coating
+    Raysere's Modified Thermal Plating renamed to Raysere's Modified Thermal Coating
+    Vizan's Modified Thermal Plating renamed to Vizan's Modified Thermal Coating
+    Ahremen's Modified Thermal Plating renamed to Ahremen's Modified Thermal Coating
+    Chelm's Modified Thermal Plating renamed to Chelm's Modified Thermal Coating
+    Draclira's Modified Thermal Plating renamed to Draclira's Modified Thermal Coating
+    Brynn's Modified Adaptive Nano Plating renamed to Brynn's Modified Multispectrum Coating
+    Tuvan's Modified Adaptive Nano Plating renamed to Tuvan's Modified Multispectrum Coating
+    Setele's Modified Adaptive Nano Plating renamed to Setele's Modified Multispectrum Coating
+    Cormack's Modified Adaptive Nano Plating renamed to Cormack's Modified Multispectrum Coating
+    Brynn's Modified Thermal Plating renamed to Brynn's Modified Thermal Coating
+    Tuvan's Modified Thermal Plating renamed to Tuvan's Modified Thermal Coating
+    Setele's Modified Thermal Plating renamed to Setele's Modified Thermal Coating
+    Cormack's Modified Thermal Plating renamed to Cormack's Modified Thermal Coating
+    Brynn's Modified EM Plating renamed to Brynn's Modified EM Coating
+    Tuvan's Modified EM Plating renamed to Tuvan's Modified EM Coating
+    Setele's Modified EM Plating renamed to Setele's Modified EM Coating
+    Cormack's Modified EM Plating renamed to Cormack's Modified EM Coating
+    Brynn's Modified Explosive Plating renamed to Brynn's Modified Explosive Coating
+    Tuvan's Modified Explosive Plating renamed to Tuvan's Modified Explosive Coating
+    Setele's Modified Explosive Plating renamed to Setele's Modified Explosive Coating
+    Cormack's Modified Explosive Plating renamed to Cormack's Modified Explosive Coating
+    Brynn's Modified Kinetic Plating renamed to Brynn's Modified Kinetic Coating
+    Tuvan's Modified Kinetic Plating renamed to Tuvan's Modified Kinetic Coating
+    Setele's Modified Kinetic Plating renamed to Setele's Modified Kinetic Coating
+    Cormack's Modified Kinetic Plating renamed to Cormack's Modified Kinetic Coating
+    Imperial Navy Thermal Plating renamed to Imperial Navy Thermal Coating
+    Imperial Navy EM Plating renamed to Imperial Navy EM Coating
+    Imperial Navy Explosive Plating renamed to Imperial Navy Explosive Coating
+    Imperial Navy Kinetic Plating renamed to Imperial Navy Kinetic Coating
+    Imperial Navy Adaptive Nano Plating renamed to Imperial Navy Multispectrum Coating
+    Republic Fleet Thermal Plating renamed to Republic Fleet Thermal Coating
+    Republic Fleet EM Plating renamed to Republic Fleet EM Coating
+    Republic Fleet Explosive Plating renamed to Republic Fleet Explosive Coating
+    Republic Fleet Kinetic Plating renamed to Republic Fleet Kinetic Coating
+    Republic Fleet Adaptive Nano Plating renamed to Republic Fleet Multispectrum Coating
+    Upgraded Adaptive Nano Plating I renamed to Upgraded Multispectrum Coating I
+    Upgraded Kinetic Plating I renamed to Upgraded Kinetic Coating I
+    Upgraded Explosive Plating I renamed to Upgraded Explosive Coating I
+    Upgraded EM Plating I renamed to Upgraded EM Coating I
+    Upgraded Thermal Plating I renamed to Upgraded Thermal Coating I
+    Upgraded Layered Plating I renamed to Upgraded Layered Coating I
+    Ammatar Navy Kinetic Plating renamed to Ammatar Navy Kinetic Coating
+    Ammatar Navy Adaptive Nano Plating renamed to Ammatar Navy Multispectrum Coating
+    Ammatar Navy Explosive Plating renamed to Ammatar Navy Explosive Coating
+    Ammatar Navy EM Plating renamed to Ammatar Navy EM Coating
+    Federation Navy Adaptive Nano Plating renamed to Federation Navy Multispectrum Coating
+    Federation Navy Kinetic Plating renamed to Federation Navy Kinetic Coating
+    Federation Navy Explosive Plating renamed to Federation Navy Explosive Coating
+    Federation Navy EM Plating renamed to Federation Navy EM Coating
+    Federation Navy Thermal Plating renamed to Federation Navy Thermal Coating
+    Corpii C-Type Adaptive Nano Plating renamed to Corpii C-Type Multispectrum Coating
+    Centii C-Type Adaptive Nano Plating renamed to Centii C-Type Multispectrum Coating
+    Corpii B-Type Adaptive Nano Plating renamed to Corpii B-Type Multispectrum Coating
+    Centii B-Type Adaptive Nano Plating renamed to Centii B-Type Multispectrum Coating
+    Corpii A-Type Adaptive Nano Plating renamed to Corpii A-Type Multispectrum Coating
+    Centii A-Type Adaptive Nano Plating renamed to Centii A-Type Multispectrum Coating
+    Corpii C-Type Kinetic Plating renamed to Corpii C-Type Kinetic Coating
+    Centii C-Type Kinetic Plating renamed to Centii C-Type Kinetic Coating
+    Corpii C-Type Explosive Plating renamed to Corpii C-Type Explosive Coating
+    Centii C-Type Explosive Plating renamed to Centii C-Type Explosive Coating
+    Corpii C-Type EM Plating renamed to Corpii C-Type EM Coating
+    Centii C-Type EM Plating renamed to Centii C-Type EM Coating
+    Corpii C-Type Thermal Plating renamed to Corpii C-Type Thermal Coating
+    Centii C-Type Thermal Plating renamed to Centii C-Type Thermal Coating
+    Corpii B-Type Thermal Plating renamed to Corpii B-Type Thermal Coating
+    Centii B-Type Thermal Plating renamed to Centii B-Type Thermal Coating
+    Corpii B-Type Kinetic Plating renamed to Corpii B-Type Kinetic Coating
+    Centii B-Type Kinetic Plating renamed to Centii B-Type Kinetic Coating
+    Corpii B-Type Explosive Plating renamed to Corpii B-Type Explosive Coating
+    Centii B-Type Explosive Plating renamed to Centii B-Type Explosive Coating
+    Corpii B-Type EM Plating renamed to Corpii B-Type EM Coating
+    Centii B-Type EM Plating renamed to Centii B-Type EM Coating
+    Corpii A-Type Kinetic Plating renamed to Corpii A-Type Kinetic Coating
+    Centii A-Type Kinetic Plating renamed to Centii A-Type Kinetic Coating
+    Corpii A-Type Explosive Plating renamed to Corpii A-Type Explosive Coating
+    Centii A-Type Explosive Plating renamed to Centii A-Type Explosive Coating
+    Corpii A-Type EM Plating renamed to Corpii A-Type EM Coating
+    Centii A-Type EM Plating renamed to Centii A-Type EM Coating
+    Corpii A-Type Thermal Plating renamed to Corpii A-Type Thermal Coating
+    Centii A-Type Thermal Plating renamed to Centii A-Type Thermal Coating
+    Coreli C-Type Adaptive Nano Plating renamed to Coreli C-Type Multispectrum Coating
+    Coreli C-Type Kinetic Plating renamed to Coreli C-Type Kinetic Coating
+    Coreli C-Type Explosive Plating renamed to Coreli C-Type Explosive Coating
+    Coreli C-Type EM Plating renamed to Coreli C-Type EM Coating
+    Coreli C-Type Thermal Plating renamed to Coreli C-Type Thermal Coating
+    Coreli B-Type Adaptive Nano Plating renamed to Coreli B-Type Multispectrum Coating
+    Coreli B-Type Kinetic Plating renamed to Coreli B-Type Kinetic Coating
+    Coreli B-Type Explosive Plating renamed to Coreli B-Type Explosive Coating
+    Coreli B-Type EM Plating renamed to Coreli B-Type EM Coating
+    Coreli B-Type Thermal Plating renamed to Coreli B-Type Thermal Coating
+    Coreli A-Type Adaptive Nano Plating renamed to Coreli A-Type Multispectrum Coating
+    Coreli A-Type Kinetic Plating renamed to Coreli A-Type Kinetic Coating
+    Coreli A-Type Explosive Plating renamed to Coreli A-Type Explosive Coating
+    Coreli A-Type EM Plating renamed to Coreli A-Type EM Coating
+    Coreli A-Type Thermal Plating renamed to Coreli A-Type Thermal Coating
+    Khanid Navy Adaptive Nano Plating renamed to Khanid Navy Multispectrum Coating
+    Khanid Navy Kinetic Plating renamed to Khanid Navy Kinetic Coating
+    Khanid Navy Explosive Plating renamed to Khanid Navy Explosive Coating
+    Khanid Navy EM Plating renamed to Khanid Navy EM Coating
+    Khanid Navy Thermal Plating renamed to Khanid Navy Thermal Coating
+    Ammatar Navy Thermal Plating renamed to Ammatar Navy Thermal Coating
+    Low-Grade Mimesis Alpha renamed to Low-grade Mimesis Alpha
+    Low-Grade Mimesis Beta renamed to Low-grade Mimesis Beta
+    Low-Grade Mimesis Gamma renamed to Low-grade Mimesis Gamma
+    Low-Grade Mimesis Delta renamed to Low-grade Mimesis Delta
+    Low-Grade Mimesis Epsilon renamed to Low-grade Mimesis Epsilon
+    Low-Grade Mimesis Omega renamed to Low-grade Mimesis Omega
+    Mid-Grade Mimesis Alpha renamed to Mid-grade Mimesis Alpha
+    Mid-Grade Mimesis Beta renamed to Mid-grade Mimesis Beta
+    Mid-Grade Mimesis Gamma renamed to Mid-grade Mimesis Gamma
+    Mid-Grade Mimesis Delta renamed to Mid-grade Mimesis Delta
+    Mid-Grade Mimesis Epsilon renamed to Mid-grade Mimesis Epsilon
+    Mid-Grade Mimesis Omega renamed to Mid-grade Mimesis Omega
+    High-Grade Mimesis Alpha renamed to High-grade Mimesis Alpha
+    High-Grade Mimesis Beta renamed to High-grade Mimesis Beta
+    High-Grade Mimesis Delta renamed to High-grade Mimesis Delta
+    High-Grade Mimesis Epsilon renamed to High-grade Mimesis Epsilon
+    High-Grade Mimesis Gamma renamed to High-grade Mimesis Gamma
+    High-Grade Mimesis Omega renamed to High-grade Mimesis Omega
     """
 
 def main(old, new):

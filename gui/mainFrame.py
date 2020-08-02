@@ -110,8 +110,6 @@ class OpenFitsThread(threading.Thread):
         self.start()
 
     def run(self):
-        time.sleep(0.5)  # Give GUI some time to finish drawing
-
         # `startup` tells FitSpawner that we are loading fits are startup, and
         # has 3 values:
         # False = Set as default in FitSpawner itself, never set here
@@ -612,7 +610,9 @@ class MainFrame(wx.Frame):
                 (wx.ACCEL_CTRL, wx.WXK_PAGEDOWN, ctabnext),
                 (wx.ACCEL_CTRL, wx.WXK_PAGEUP, ctabprev),
                 (wx.ACCEL_CMD, wx.WXK_PAGEDOWN, ctabnext),
-                (wx.ACCEL_CMD, wx.WXK_PAGEUP, ctabprev)
+                (wx.ACCEL_CMD, wx.WXK_PAGEUP, ctabprev),
+
+                (wx.ACCEL_CMD | wx.ACCEL_SHIFT, ord("Z"), wx.ID_REDO)
                 ]
 
         # Ctrl/Cmd+# for addition pane selection

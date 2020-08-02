@@ -90,8 +90,6 @@ class ProjectedView(d.Display):
         self.Bind(wx.EVT_LEFT_DCLICK, self.onLeftDoubleClick)
         self.Bind(wx.EVT_KEY_UP, self.kbEvent)
 
-        self.droneView = gui.builtinAdditionPanes.droneView.DroneView
-
         self.Bind(wx.EVT_CONTEXT_MENU, self.spawnMenu)
 
         self.SetDropTarget(ProjectedViewDrop(self.handleListDrag))
@@ -119,12 +117,12 @@ class ProjectedView(d.Display):
                 fitID=fitID, itemID=fit.modules[int(data[1])].itemID))
         elif data[0] == 'market':
             itemID = int(data[1])
-            category = Market.getInstance().getItem(itemID, eager=('group.category')).category.name
-            if category == 'Module':
+            item = Market.getInstance().getItem(itemID)
+            if item.isModule:
                 self.mainFrame.command.Submit(cmd.GuiAddProjectedModuleCommand(fitID=fitID, itemID=itemID))
-            elif category == 'Drone':
+            elif item.isDrone:
                 self.mainFrame.command.Submit(cmd.GuiAddProjectedDroneCommand(fitID=fitID, itemID=itemID))
-            elif category == 'Fighter':
+            elif item.isFighter:
                 self.mainFrame.command.Submit(cmd.GuiAddProjectedFighterCommand(fitID=fitID, itemID=itemID))
 
     def kbEvent(self, event):
@@ -162,7 +160,7 @@ class ProjectedView(d.Display):
         if item.marketGroup is None:
             item = item.metaGroup.parent
 
-        return (self.droneView.DRONE_ORDER.index(item.marketGroup.name),
+        return (gui.builtinAdditionPanes.droneView.DRONE_ORDER.index(item.marketGroup.name),
                 drone.item.name)
 
     @staticmethod

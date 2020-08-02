@@ -106,6 +106,9 @@ class Price:
         # attempt to find user's selected price source, otherwise get first one
         sourceAll = list(cls.sources.keys())
         sourcePrimary = sFit.serviceFittingOptions["priceSource"] if sFit.serviceFittingOptions["priceSource"] in sourceAll else sourceAll[0]
+        # When we have picked primary source, make sure to include only sources from the same group to avoid fetching
+        # tranquility data for serenity or vice versa
+        sourceAll = list(n for n, s in cls.sources.items() if s.group == cls.sources[sourcePrimary].group)
 
         # Format: {source name: timeout weight}
         sources = {sourcePrimary: len(sourceAll)}
@@ -273,4 +276,4 @@ class PriceWorkerThread(threading.Thread):
 
 
 # Import market sources only to initialize price source modules, they register on their own
-from service.marketSources import evemarketer, evemarketdata, evepraisal, fuzzwork  # noqa: E402
+from service.marketSources import evemarketer, evemarketdata, evepraisal, fuzzwork, cevemarket  # noqa: E402

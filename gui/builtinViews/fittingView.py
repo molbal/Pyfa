@@ -167,7 +167,7 @@ class FittingView(d.Display):
         self.hoveredRow = None
         self.hoveredColumn = None
 
-        self.Bind(wx.EVT_KEY_DOWN, self.kbEvent)
+        self.Bind(wx.EVT_KEY_UP, self.kbEvent)
         self.Bind(wx.EVT_LEFT_DOWN, self.click)
         self.Bind(wx.EVT_RIGHT_DOWN, self.click)
         self.Bind(wx.EVT_MIDDLE_DOWN, self.click)
@@ -585,7 +585,10 @@ class FittingView(d.Display):
 
             if sFit.serviceFittingOptions["rackSlots"]:
                 # flag to know when to add blanks, based on previous slot
-                slotDivider = None if sFit.serviceFittingOptions["rackLabels"] else self.mods[0].slot
+                if sFit.serviceFittingOptions["rackLabels"] or len(self.mods) == 0:
+                    slotDivider = None
+                else:
+                    slotDivider = self.mods[0].slot
 
                 # first loop finds where slot dividers must go before modifying self.mods
                 for i, mod in enumerate(self.mods):
