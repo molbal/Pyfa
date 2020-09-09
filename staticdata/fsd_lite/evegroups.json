@@ -8450,7 +8450,7 @@
     "categoryID": 7, 
     "fittableNonSingleton": false, 
     "groupID": 326, 
-    "groupName": "Armor Plating Energized", 
+    "groupName": "Energized Armor Membrane", 
     "groupNameID": 63791, 
     "iconID": 0, 
     "published": true, 
@@ -9788,6 +9788,17 @@
     "groupName": "Drone Upgrade Blueprint", 
     "groupNameID": 63856, 
     "iconID": 0, 
+    "published": true, 
+    "useBasePrice": true
+  }, 
+  "4086": {
+    "anchorable": false, 
+    "anchored": false, 
+    "categoryID": 66, 
+    "fittableNonSingleton": false, 
+    "groupID": 4086, 
+    "groupName": "Quantum Cores", 
+    "groupNameID": 569641, 
     "published": true, 
     "useBasePrice": true
   }, 

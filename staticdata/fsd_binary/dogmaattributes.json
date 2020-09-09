@@ -7353,8 +7353,7 @@
     "displayName": "Meta Level", 
     "displayNameID": 233633, 
     "highIsGood": 1, 
-    "iconID": 0, 
-    "name": "metaLevel", 
+    "name": "metaLevelOld", 
     "published": 1, 
     "stackable": 1, 
     "unitID": 140
@@ -32546,5 +32545,50 @@
     "name": "showSystemInfoBubble", 
     "published": 0, 
     "stackable": 0
+  }, 
+  "3095": {
+    "attributeID": 3095, 
+    "categoryID": 7, 
+    "dataType": 5, 
+    "defaultValue": 0.0, 
+    "displayName": "Probe Strength Bonus", 
+    "displayNameID": 568981, 
+    "highIsGood": 1, 
+    "name": "scanProbeStrengthBonus", 
+    "published": 1, 
+    "stackable": 0, 
+    "unitID": 105
+  }, 
+  "3098": {
+    "attributeID": 3098, 
+    "dataType": 5, 
+    "defaultValue": 0.0, 
+    "highIsGood": 0, 
+    "name": "armorRepairDurationBonus", 
+    "published": 0, 
+    "stackable": 0
+  }, 
+  "3099": {
+    "attributeID": 3099, 
+    "dataType": 5, 
+    "defaultValue": 0.0, 
+    "highIsGood": 0, 
+    "name": "shieldBoosterDurationBonus", 
+    "published": 0, 
+    "stackable": 0
+  }, 
+  "3101": {
+    "attributeID": 3101, 
+    "categoryID": 1, 
+    "dataType": 11, 
+    "defaultValue": 0.0, 
+    "description": "Describes which type of deed fits in this structure", 
+    "displayName": "Quantum Core Type", 
+    "displayNameID": 569361, 
+    "highIsGood": 0, 
+    "name": "structureRequiresDeedType", 
+    "published": 1, 
+    "stackable": 0, 
+    "unitID": 116
   }
 }

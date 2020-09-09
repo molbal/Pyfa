@@ -441,7 +441,7 @@ class Effect63(BaseEffect):
 
     Used by:
     Modules from group: Armor Coating (184 of 184)
-    Modules from group: Armor Plating Energized (187 of 187)
+    Modules from group: Energized Armor Membrane (169 of 169)
     """
 
     type = 'passive'
@@ -2447,7 +2447,7 @@ class Effect856(BaseEffect):
     @staticmethod
     def handler(fit, container, context, projectionRange, **kwargs):
         penalized = False if 'skill' in context or 'implant' in context else True
-        fit.ship.boostItemAttr('baseWarpSpeed', container.getModifiedItemAttr('WarpSBonus'),
+        fit.ship.boostItemAttr('warpSpeedMultiplier', container.getModifiedItemAttr('WarpSBonus'),
                                stackingPenalties=penalized, **kwargs)
 
 
@@ -6079,7 +6079,7 @@ class Effect2041(BaseEffect):
 
     Used by:
     Modules from group: Armor Coating (184 of 184)
-    Modules from group: Armor Plating Energized (187 of 187)
+    Modules from group: Energized Armor Membrane (169 of 169)
     """
 
     type = 'passive'
@@ -6256,7 +6256,7 @@ class Effect2109(BaseEffect):
 
     @staticmethod
     def handler(fit, skill, context, projectionRange, **kwargs):
-        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Armor Plating Energized',
+        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Energized Armor Membrane',
                                       'emDamageResistanceBonus', skill.getModifiedItemAttr('hardeningBonus') * skill.level, **kwargs)
 
 
@@ -6272,7 +6272,7 @@ class Effect2110(BaseEffect):
 
     @staticmethod
     def handler(fit, skill, context, projectionRange, **kwargs):
-        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Armor Plating Energized',
+        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Energized Armor Membrane',
                                       'explosiveDamageResistanceBonus',
                                       skill.getModifiedItemAttr('hardeningBonus') * skill.level, **kwargs)
 
@@ -6289,7 +6289,7 @@ class Effect2111(BaseEffect):
 
     @staticmethod
     def handler(fit, skill, context, projectionRange, **kwargs):
-        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Armor Plating Energized',
+        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Energized Armor Membrane',
                                       'kineticDamageResistanceBonus',
                                       skill.getModifiedItemAttr('hardeningBonus') * skill.level, **kwargs)
 
@@ -6306,7 +6306,7 @@ class Effect2112(BaseEffect):
 
     @staticmethod
     def handler(fit, skill, context, projectionRange, **kwargs):
-        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Armor Plating Energized',
+        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Energized Armor Membrane',
                                       'thermalDamageResistanceBonus',
                                       skill.getModifiedItemAttr('hardeningBonus') * skill.level, **kwargs)
 
@@ -8691,8 +8691,8 @@ class Effect2872(BaseEffect):
 
     @staticmethod
     def handler(fit, container, context, projectionRange, **kwargs):
-        fit.modules.filteredChargeMultiply(lambda mod: mod.charge.requiresSkill('Defender Missiles'),
-                                           'maxVelocity', container.getModifiedItemAttr('missileVelocityBonus'), **kwargs)
+        fit.modules.filteredChargeBoost(lambda mod: mod.charge.requiresSkill('Defender Missiles'),
+                                        'maxVelocity', container.getModifiedItemAttr('missileVelocityBonus'), **kwargs)
 
 
 class Effect2881(BaseEffect):
@@ -12389,6 +12389,8 @@ class Effect3992(BaseEffect):
     Celestials named like: Class Pulsar Effects (6 of 6)
     Celestial: Republic Stellar Observatory
     Celestial: State Stellar Observatory
+    Celestial: Strong Metaliminal Gamma Ray Storm
+    Celestial: Weak Metaliminal Gamma Ray Storm
     """
 
     runTime = 'early'
@@ -12424,6 +12426,8 @@ class Effect3995(BaseEffect):
     Used by:
     Celestials named like: Class Pulsar Effects (6 of 6)
     Celestials named like: Class Wolf Rayet Effects (6 of 6)
+    Celestial: Strong Metaliminal Gamma Ray Storm
+    Celestial: Weak Metaliminal Gamma Ray Storm
     """
 
     runTime = 'early'
@@ -12442,6 +12446,8 @@ class Effect3996(BaseEffect):
     Used by:
     Celestials named like: Class Pulsar Effects (6 of 6)
     Celestials named like: Incursion Effect (2 of 2)
+    Celestial: Strong Metaliminal Electrical Storm
+    Celestial: Weak Metaliminal Electrical Storm
     """
 
     runTime = 'early'
@@ -12460,6 +12466,8 @@ class Effect3997(BaseEffect):
     Used by:
     Celestials named like: Class Pulsar Effects (6 of 6)
     Celestials named like: Incursion Effect (2 of 2)
+    Celestial: Strong Metaliminal Gamma Ray Storm
+    Celestial: Weak Metaliminal Gamma Ray Storm
     """
 
     runTime = 'early'
@@ -12479,6 +12487,8 @@ class Effect3998(BaseEffect):
     Used by:
     Celestials named like: Class Pulsar Effects (6 of 6)
     Celestials named like: Incursion Effect (2 of 2)
+    Celestial: Strong Metaliminal Exotic Matter Storm
+    Celestial: Weak Metaliminal Exotic Matter Storm
     """
 
     runTime = 'early'
@@ -12498,6 +12508,8 @@ class Effect3999(BaseEffect):
     Used by:
     Celestials named like: Class Pulsar Effects (6 of 6)
     Celestials named like: Incursion Effect (2 of 2)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -12551,6 +12563,8 @@ class Effect4016(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -12569,6 +12583,8 @@ class Effect4017(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -12587,6 +12603,8 @@ class Effect4018(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -12605,6 +12623,8 @@ class Effect4019(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -12623,6 +12643,8 @@ class Effect4020(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -12641,6 +12663,8 @@ class Effect4021(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -12659,6 +12683,8 @@ class Effect4022(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -13183,6 +13209,8 @@ class Effect4088(BaseEffect):
     Used by:
     Celestials named like: Class Cataclysmic Variable Effects (6 of 6)
     Celestial: Dazh Liminality Locus
+    Celestial: Strong Metaliminal Gamma Ray Storm
+    Celestial: Weak Metaliminal Gamma Ray Storm
     """
 
     runTime = 'early'
@@ -13191,8 +13219,10 @@ class Effect4088(BaseEffect):
     @staticmethod
     def handler(fit, module, context, projectionRange, **kwargs):
         fit.modules.filteredItemMultiply(
-            lambda mod: mod.item.requiresSkill('Remote Armor Repair Systems') or mod.item.requiresSkill('Capital Remote Armor Repair Systems'),
-            'armorDamageAmount', module.getModifiedItemAttr('armorDamageAmountMultiplierRemote'), stackingPenalties=True, **kwargs)
+            lambda mod: mod.item.requiresSkill('Remote Armor Repair Systems') or
+                        mod.item.requiresSkill('Capital Remote Armor Repair Systems'),
+            'armorDamageAmount', module.getModifiedItemAttr('armorDamageAmountMultiplierRemote'),
+            stackingPenalties=True, penaltyGroup='postMul', **kwargs)
 
 
 class Effect4089(BaseEffect):
@@ -13202,6 +13232,8 @@ class Effect4089(BaseEffect):
     Used by:
     Celestials named like: Class Cataclysmic Variable Effects (6 of 6)
     Celestial: Dazh Liminality Locus
+    Celestial: Strong Metaliminal Gamma Ray Storm
+    Celestial: Weak Metaliminal Gamma Ray Storm
     """
 
     runTime = 'early'
@@ -13210,8 +13242,10 @@ class Effect4089(BaseEffect):
     @staticmethod
     def handler(fit, module, context, projectionRange, **kwargs):
         fit.modules.filteredItemMultiply(
-            lambda mod: mod.item.requiresSkill('Shield Emission Systems') or mod.item.requiresSkill('Capital Shield Emission Systems'),
-            'shieldBonus', module.getModifiedItemAttr('shieldBonusMultiplierRemote'), stackingPenalties=True, penaltyGroup='postMul', **kwargs)
+            lambda mod: mod.item.requiresSkill('Shield Emission Systems') or
+                        mod.item.requiresSkill('Capital Shield Emission Systems'),
+            'shieldBonus', module.getModifiedItemAttr('shieldBonusMultiplierRemote'),
+            stackingPenalties=True, penaltyGroup='postMul', **kwargs)
 
 
 class Effect4090(BaseEffect):
@@ -13220,6 +13254,8 @@ class Effect4090(BaseEffect):
 
     Used by:
     Celestials named like: Class Cataclysmic Variable Effects (6 of 6)
+    Celestial: Strong Metaliminal Gamma Ray Storm
+    Celestial: Weak Metaliminal Gamma Ray Storm
     """
 
     runTime = 'early'
@@ -13237,6 +13273,8 @@ class Effect4091(BaseEffect):
     Used by:
     Celestials named like: Class Cataclysmic Variable Effects (6 of 6)
     Celestials named like: Class Pulsar Effects (6 of 6)
+    Celestial: Strong Metaliminal Electrical Storm
+    Celestial: Weak Metaliminal Electrical Storm
     """
 
     runTime = 'early'
@@ -13355,6 +13393,8 @@ class Effect4135(BaseEffect):
 
     Used by:
     Celestials named like: Class Wolf Rayet Effects (6 of 6)
+    Celestial: Strong Metaliminal Electrical Storm
+    Celestial: Weak Metaliminal Electrical Storm
     """
 
     runTime = 'early'
@@ -13372,6 +13412,8 @@ class Effect4136(BaseEffect):
 
     Used by:
     Celestials named like: Class Wolf Rayet Effects (6 of 6)
+    Celestial: Strong Metaliminal Gamma Ray Storm
+    Celestial: Weak Metaliminal Gamma Ray Storm
     """
 
     runTime = 'early'
@@ -13390,6 +13432,8 @@ class Effect4137(BaseEffect):
 
     Used by:
     Celestials named like: Class Wolf Rayet Effects (6 of 6)
+    Celestial: Strong Metaliminal Exotic Matter Storm
+    Celestial: Weak Metaliminal Exotic Matter Storm
     """
 
     runTime = 'early'
@@ -13408,6 +13452,8 @@ class Effect4138(BaseEffect):
 
     Used by:
     Celestials named like: Class Wolf Rayet Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -16432,6 +16478,8 @@ class Effect4906(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -16439,9 +16487,9 @@ class Effect4906(BaseEffect):
 
     @staticmethod
     def handler(fit, beacon, context, projectionRange, **kwargs):
-        fit.drones.filteredItemMultiply(lambda drone: drone.item.requiresSkill('Fighters'),
-                                        'damageMultiplier', beacon.getModifiedItemAttr('damageMultiplierMultiplier'),
-                                        stackingPenalties=True, penaltyGroup='postMul', **kwargs)
+        fit.fighters.filteredItemMultiply(lambda drone: drone.item.requiresSkill('Fighters'),
+                                          'damageMultiplier', beacon.getModifiedItemAttr('damageMultiplierMultiplier'),
+                                          stackingPenalties=True, penaltyGroup='postMul', **kwargs)
 
 
 class Effect4911(BaseEffect):
@@ -23067,6 +23115,8 @@ class Effect5913(BaseEffect):
     Celestials named like: Class Wolf Rayet Effects (6 of 6)
     Celestial: Federal Stellar Observatory
     Celestial: Imperial Stellar Observatory
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -23195,6 +23245,8 @@ class Effect5920(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -23203,7 +23255,8 @@ class Effect5920(BaseEffect):
     @staticmethod
     def handler(fit, beacon, context, projectionRange, **kwargs):
         fit.modules.filteredChargeMultiply(lambda mod: mod.charge.requiresSkill('Missile Launcher Operation'),
-                                           'aoeCloudSize', beacon.getModifiedItemAttr('aoeCloudSizeMultiplier'), **kwargs)
+                                           'aoeCloudSize', beacon.getModifiedItemAttr('aoeCloudSizeMultiplier'),
+                                           stackingPenalties=True, penaltyGroup='postMul', **kwargs)
 
 
 class Effect5921(BaseEffect):
@@ -23345,6 +23398,8 @@ class Effect5929(BaseEffect):
 
     Used by:
     Celestials named like: Class Magnetar Effects (6 of 6)
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
     """
 
     runTime = 'early'
@@ -26852,7 +26907,7 @@ class Effect6400(BaseEffect):
 
     @staticmethod
     def handler(fit, src, context, projectionRange, **kwargs):
-        groups = ('Structure Warp Scrambler', 'Structure Disruption Battery', 'Structure Stasis Webifier')
+        groups = ('Structure Warp Scrambler', 'Structure ECM Battery', 'Structure Stasis Webifier')
         fit.modules.filteredItemBoost(lambda mod: mod.item.group.name in groups,
                                       'capacitorNeed', src.getModifiedItemAttr('capNeedBonus'),
                                       skill='Structure Electronic Systems', **kwargs)
@@ -26967,15 +27022,12 @@ class Effect6406(BaseEffect):
     @staticmethod
     def handler(fit, src, context, projectionRange, **kwargs):
         groups = ('Structure ECM Battery', 'Structure Disruption Battery')
-
         fit.modules.filteredItemBoost(lambda mod: mod.item.group.name in groups,
                                       'falloff', src.getModifiedItemAttr('structureRigEwarFalloffBonus'),
                                       stackingPenalties=True, **kwargs)
-
         fit.modules.filteredItemBoost(lambda mod: mod.item.group.name in groups,
                                       'maxRange', src.getModifiedItemAttr('structureRigEwarOptimalBonus'),
                                       stackingPenalties=True, **kwargs)
-
         fit.modules.filteredItemBoost(lambda mod: mod.item.group.name in groups,
                                       'falloffEffectiveness', src.getModifiedItemAttr('structureRigEwarFalloffBonus'),
                                       stackingPenalties=True, **kwargs)
@@ -26996,8 +27048,7 @@ class Effect6407(BaseEffect):
     def handler(fit, src, context, projectionRange, **kwargs):
         groups = ('Structure ECM Battery', 'Structure Disruption Battery')
         fit.modules.filteredItemBoost(lambda mod: mod.item.group.name in groups,
-                                      'capacitorNeed', src.getModifiedItemAttr('structureRigEwarCapUseBonus'),
-                                      stackingPenalties=True, **kwargs)
+                                      'capacitorNeed', src.getModifiedItemAttr('structureRigEwarCapUseBonus'), **kwargs)
 
 
 class Effect6408(BaseEffect):
@@ -27102,8 +27153,7 @@ class Effect6413(BaseEffect):
     @staticmethod
     def handler(fit, src, context, projectionRange, **kwargs):
         fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Structure Area Denial Module',
-                                      'capacitorNeed', src.getModifiedItemAttr('structureRigPDCapUseBonus'),
-                                      stackingPenalties=True, **kwargs)
+                                      'capacitorNeed', src.getModifiedItemAttr('structureRigPDCapUseBonus'), **kwargs)
 
 
 class Effect6417(BaseEffect):
@@ -31486,7 +31536,9 @@ class Effect6730(BaseEffect):
         speedBoost = module.getModifiedItemAttr('speedFactor')
         mass = fit.ship.getModifiedItemAttr('mass')
         thrust = module.getModifiedItemAttr('speedBoostFactor')
-        fit.ship.boostItemAttr('maxVelocity', speedBoost * thrust / mass, **kwargs)
+        # It is actually a postMul, see black hole speed interactions
+        fit.ship.boostItemAttr('maxVelocity', speedBoost * thrust / mass,
+                               stackingPenalties=True, penaltyGroup='postMul', **kwargs)
         fit.ship.boostItemAttr('signatureRadius', module.getModifiedItemAttr('signatureRadiusBonus'),
                                stackingPenalties=True, **kwargs)
 
@@ -31508,7 +31560,9 @@ class Effect6731(BaseEffect):
         speedBoost = module.getModifiedItemAttr('speedFactor')
         mass = fit.ship.getModifiedItemAttr('mass')
         thrust = module.getModifiedItemAttr('speedBoostFactor')
-        fit.ship.boostItemAttr('maxVelocity', speedBoost * thrust / mass, **kwargs)
+        # It is actually a postMul, see black hole speed interactions
+        fit.ship.boostItemAttr('maxVelocity', speedBoost * thrust / mass,
+                               stackingPenalties=True, penaltyGroup='postMul', **kwargs)
 
 
 class Effect6732(BaseEffect):
@@ -35059,7 +35113,7 @@ class Effect7086(BaseEffect):
     shipbonusPCTTrackingPC2
 
     Used by:
-    Variations of ship: Vedmak (2 of 2)
+    Ship: Ikitursa
     Ship: Tiamat
     """
 
@@ -35205,6 +35259,39 @@ class Effect7097(BaseEffect):
     def handler(fit, skill, context, projectionRange, **kwargs):
         fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Precursor Weapon',
                                       'damageMultiplier', skill.getModifiedItemAttr('damageMultiplierBonus') * skill.level, **kwargs)
+
+
+class Effect7098(BaseEffect):
+    """
+    structureConversionRigBasicBonuses
+
+    Used by:
+    Structure Modules from group: Outpost Conversion Rigs (104 of 104)
+    """
+
+    type = 'passive'
+
+    @staticmethod
+    def handler(fit, src, context, projectionRange, **kwargs):
+        for attr in ('hp', 'armorHP', 'shieldCapacity', 'capacitorCapacity'):
+            fit.ship.boostItemAttr(attr, src.getModifiedItemAttr('conversionRigHPCapBonus'), **kwargs)
+        fit.ship.boostItemAttr('maxTargetRange', src.getModifiedItemAttr('structureRigMaxTargetRangeBonus'),
+                               stackingPenalties=True, **kwargs)
+        fit.ship.boostItemAttr('scanResolution', src.getModifiedItemAttr('structureRigScanResBonus'),
+                               stackingPenalties=True, **kwargs)
+        fit.ship.increaseItemAttr('maxLockedTargets', src.getModifiedItemAttr('structureRigMaxTargetBonus'), **kwargs)
+        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Structure Area Denial Module',
+                                      'capacitorNeed', src.getModifiedItemAttr('structureRigPDCapUseBonus'), **kwargs)
+        fit.modules.filteredItemBoost(lambda mod: mod.item.group.name == 'Structure Area Denial Module',
+                                      'empFieldRange', src.getModifiedItemAttr('structureRigPDRangeBonus'), **kwargs)
+        for attr in ('structureRigMaxTargetBonus', 'structureRigMaxTargetRangeBonus', 'structureRigScanResBonus'):
+            fit.modules.filteredItemForce(
+                lambda mod: mod.item.group.name == 'Structure Combat Rig L - Max Targets and Sensor Boosting',
+                attr, src.getModifiedItemAttr('constantZero'), **kwargs)
+        for attr in ('structureRigPDCapUseBonus', 'structureRigPDRangeBonus'):
+            fit.modules.filteredItemForce(
+                lambda mod: mod.item.group.name == 'Structure Combat Rig L - Point Defense Battery Application and Projection',
+                attr, src.getModifiedItemAttr('constantZero'), **kwargs)
 
 
 class Effect7111(BaseEffect):
@@ -35766,6 +35853,8 @@ class Effect7193(BaseEffect):
     Used by:
     Celestials named like: Stellar Observatory (4 of 4)
     Celestials named like: Triglavian Invasion System Effects (3 of 3)
+    Celestial: Strong Metaliminal Exotic Matter Storm
+    Celestial: Weak Metaliminal Exotic Matter Storm
     """
 
     runTime = 'early'
@@ -36080,10 +36169,12 @@ class Effect7234(BaseEffect):
 
 class Effect7237(BaseEffect):
     """
-    systemWarpSpeed
+    systemWarpSpeedBonus
 
     Used by:
     Celestial: Dazh Liminality Locus
+    Celestial: Strong Metaliminal Exotic Matter Storm
+    Celestial: Weak Metaliminal Exotic Matter Storm
     """
 
     runTime = 'early'
@@ -36259,6 +36350,22 @@ class Effect8018(BaseEffect):
     def handler(fit, implant, context, projectionRange, **kwargs):
         fit.modules.filteredItemBoost(lambda mod: mod.item.requiresSkill('Shield Emission Systems') or mod.item.requiresSkill('Remote Armor Repair Systems'),
                                       'duration', implant.getModifiedItemAttr('remoteRepDurationBonus'), **kwargs)
+
+
+class Effect8020(BaseEffect):
+    """
+    systemWarpSpeedAddition
+
+    Used by:
+    Celestial: System-Wide Warp Speed Bonus
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, src, context, projectionRange, **kwargs):
+        fit.ship.increaseItemAttr('warpSpeedMultiplier', src.getModifiedItemAttr('warpSpeedAdd'), **kwargs)
 
 
 class Effect8021(BaseEffect):
@@ -36850,3 +36957,227 @@ class Effect8073(BaseEffect):
     def handler(fit, ship, context, projectionRange, **kwargs):
         fit.ship.boostItemAttr('shieldCapacity', ship.getModifiedItemAttr('eliteBonusCommandShips1'),
                                skill='Command Ships', **kwargs)
+
+
+class Effect8074(BaseEffect):
+    """
+    shipBonusPC2maxRange
+
+    Used by:
+    Ship: Vedmak
+    """
+
+    type = 'passive'
+
+    @staticmethod
+    def handler(fit, ship, context, projectionRange, **kwargs):
+        fit.modules.filteredItemBoost(lambda mod: mod.item.requiresSkill('Medium Precursor Weapon'),
+                                      'maxRange', ship.getModifiedItemAttr('shipBonusPC2'), skill='Precursor Cruiser', **kwargs)
+
+
+class Effect8075(BaseEffect):
+    """
+    systemHullEmResistance
+
+    Used by:
+    Celestial: Strong Metaliminal Electrical Storm
+    Celestial: Weak Metaliminal Electrical Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, beacon, context, projectionRange, **kwargs):
+        fit.ship.boostItemAttr('emDamageResonance', beacon.getModifiedItemAttr('emDamageResistanceBonus'),
+                               stackingPenalties=True, **kwargs)
+
+
+class Effect8076(BaseEffect):
+    """
+    systemHullThermalResistance
+
+    Used by:
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, beacon, context, projectionRange, **kwargs):
+        fit.ship.boostItemAttr('thermalDamageResonance', beacon.getModifiedItemAttr('thermalDamageResistanceBonus'),
+                               stackingPenalties=True, **kwargs)
+
+
+class Effect8077(BaseEffect):
+    """
+    systemHullKineticResistance
+
+    Used by:
+    Celestial: Strong Metaliminal Exotic Matter Storm
+    Celestial: Weak Metaliminal Exotic Matter Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, container, context, projectionRange, **kwargs):
+        fit.ship.boostItemAttr('kineticDamageResonance', container.getModifiedItemAttr('kineticDamageResistanceBonus'),
+                               stackingPenalties=True, **kwargs)
+
+
+class Effect8078(BaseEffect):
+    """
+    systemHullExplosiveResistance
+
+    Used by:
+    Celestial: Strong Metaliminal Gamma Ray Storm
+    Celestial: Weak Metaliminal Gamma Ray Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, container, context, projectionRange, **kwargs):
+        fit.ship.boostItemAttr('explosiveDamageResonance', container.getModifiedItemAttr('explosiveDamageResistanceBonus'),
+                               stackingPenalties=True, **kwargs)
+
+
+class Effect8079(BaseEffect):
+    """
+    systemVirusCoherenceBonus
+
+    Used by:
+    Celestial: Strong Metaliminal Electrical Storm
+    Celestial: Weak Metaliminal Electrical Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, container, context, projectionRange, **kwargs):
+        fit.modules.filteredItemIncrease(lambda mod: mod.item.requiresSkill('Archaeology'),
+                                         'virusCoherence', container.getModifiedItemAttr('virusCoherenceBonus'), **kwargs)
+        fit.modules.filteredItemIncrease(lambda mod: mod.item.requiresSkill('Hacking'),
+                                         'virusCoherence', container.getModifiedItemAttr('virusCoherenceBonus'), **kwargs)
+
+
+class Effect8080(BaseEffect):
+    """
+    systemProbeStrengthBonus
+
+    Used by:
+    Celestial: Strong Metaliminal Electrical Storm
+    Celestial: Weak Metaliminal Electrical Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, container, context, projectionRange, **kwargs):
+        fit.modules.filteredChargeBoost(lambda mod: mod.charge.requiresSkill('Astrometrics'),
+                                        'baseSensorStrength', container.getModifiedItemAttr('scanProbeStrengthBonus'),
+                                        stackingPenalties=True, **kwargs)
+
+
+class Effect8081(BaseEffect):
+    """
+    systemDisallowCloaking
+
+    Used by:
+    Celestial: Strong Metaliminal Electrical Storm
+    Celestial: Weak Metaliminal Electrical Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, src, context, projectionRange, **kwargs):
+        fit.ship.increaseItemAttr('disallowCloaking', src.getModifiedItemAttr('disallowCloaking'), **kwargs)
+
+
+class Effect8082(BaseEffect):
+    """
+    systemScanResolutionBonus
+
+    Used by:
+    Celestial: Strong Metaliminal Exotic Matter Storm
+    Celestial: Weak Metaliminal Exotic Matter Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, container, context, projectionRange, **kwargs):
+        fit.ship.boostItemAttr('scanResolution', container.getModifiedItemAttr('scanResolutionBonus'),
+                               stackingPenalties=True, **kwargs)
+
+
+class Effect8083(BaseEffect):
+    """
+    systemArmorRepairerDurationBonus
+
+    Used by:
+    Celestial: Strong Metaliminal Exotic Matter Storm
+    Celestial: Weak Metaliminal Exotic Matter Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, container, context, projectionRange, **kwargs):
+        fit.modules.filteredItemBoost(lambda mod: mod.item.requiresSkill('Repair Systems') or
+                                                  mod.item.requiresSkill('Capital Repair Systems'),
+                                      'duration', container.getModifiedItemAttr('armorRepairDurationBonus'), **kwargs)
+
+
+class Effect8084(BaseEffect):
+    """
+    systemShieldBoosterDurationBonus
+
+    Used by:
+    Celestial: Strong Metaliminal Exotic Matter Storm
+    Celestial: Weak Metaliminal Exotic Matter Storm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, container, context, projectionRange, **kwargs):
+        fit.modules.filteredItemBoost(lambda mod: mod.item.requiresSkill('Shield Operation') or
+                                                  mod.item.requiresSkill('Capital Shield Operation'),
+                                      'duration', container.getModifiedItemAttr('shieldBoosterDurationBonus'), **kwargs)
+
+
+class Effect8085(BaseEffect):
+    """
+    systemFighterExplosionRadius
+
+    Used by:
+    Celestial: Strong Metaliminal Plasma Firestorm
+    Celestial: Weak Metaliminal Plasma Firestorm
+    """
+
+    runTime = 'early'
+    type = ('projected', 'passive')
+
+    @staticmethod
+    def handler(fit, container, context, projectionRange, **kwargs):
+        fit.fighters.filteredItemMultiply(
+            lambda mod: mod.item.requiresSkill('Fighters'),
+            'fighterAbilityAttackMissileExplosionRadius', container.getModifiedItemAttr('aoeCloudSizeMultiplier'),
+            stackingPenalties=True, penaltyGroup='postMul', **kwargs)
+        fit.fighters.filteredItemMultiply(
+            lambda mod: mod.item.requiresSkill('Fighters'),
+            'fighterAbilityMissilesExplosionRadius', container.getModifiedItemAttr('aoeCloudSizeMultiplier'),
+            stackingPenalties=True, penaltyGroup='postMul', **kwargs)
