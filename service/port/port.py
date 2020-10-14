@@ -42,7 +42,7 @@ from service.port.multibuy import exportMultiBuy
 from service.port.shared import IPortUser, UserCancelException, processing_notify
 from service.port.shipstats import exportFitStats, exportAsJson
 from service.port.xml import importXml, exportXml
-from service.port.muta import parseMutant
+from service.port.muta import parseMutant, parseDynamicItemString, fetchDynamicItem
 
 
 pyfalog = Logger(__name__)
@@ -256,6 +256,15 @@ class Port:
             return "DNA", True, (cls.importDnaAlt(m.group("dna")),)
 
         if activeFit is not None:
+
+            # Try to import mutated item from network
+            dynData = parseDynamicItemString(string)
+            if dynData is not None:
+                itemData = fetchDynamicItem(dynData)
+                if itemData is not None:
+                    baseItem, mutaplasmidItem, mutations = itemData
+                    return "FittingItem", False, ((baseItem, mutaplasmidItem, mutations),)
+
             # Try to import mutated module
             try:
                 baseItem, mutaplasmidItem, mutations = parseMutant(lines)

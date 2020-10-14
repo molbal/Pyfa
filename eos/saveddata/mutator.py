@@ -89,12 +89,9 @@ class Mutator(EqBase):
             # sweet, all good
             returnVal = val
         else:
-            # need to fudge the numbers a bit. Go with the value closest to base
-            if val >= 0:
-                returnVal = min(self.maxValue, max(self.minValue, val))
-            else:
-                returnVal = max(self.maxValue, min(self.minValue, val))
-
+            actualMin = min(self.minValue, self.maxValue)
+            actualMax = max(self.minValue, self.maxValue)
+            returnVal = min(actualMax, max(actualMin, val))
         return returnVal
 
     @property
@@ -120,15 +117,24 @@ class Mutator(EqBase):
 
     @property
     def baseValue(self):
-        return self.baseAttribute.value
+        try:
+            return self.baseAttribute.value
+        except AttributeError:
+            return 0
 
     @property
     def minValue(self):
-        return self.minMod * self.baseAttribute.value
+        try:
+            return self.minMod * self.baseAttribute.value
+        except AttributeError:
+            return 0
 
     @property
     def maxValue(self):
-        return self.maxMod * self.baseAttribute.value
+        try:
+            return self.maxMod * self.baseAttribute.value
+        except AttributeError:
+            return 0
 
     @property
     def attribute(self):
